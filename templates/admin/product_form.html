@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}{% if product %}Edit product{% else %}Add product{% endif %}{% endblock %}
+{% block content %}
+<header class="page-heading">
+  <p class="eyebrow">ADMINISTRATOR / THE COLLECTION</p>
+  <h1>{% if product %}A quick refresh.{% else %}A new campus essential.{% endif %}</h1>
+  <p>{% if product %}Update the product details. Historical order prices stay as placed.{% else %}Add a synthetic product to the local catalogue.{% endif %}</p>
+</header>
+<div class="split-layout">
+  <section class="panel">
+    <h2>{% if product %}Edit product #{{ product['id'] }}{% else %}Product details{% endif %}</h2>
+    {% if error %}<div class="notice notice-error" role="alert">{{ error }}</div>{% endif %}
+    <form class="stack" method="post" action="{% if product %}{{ url_for('admin.edit_product', product_id=product['id']) }}{% else %}{{ url_for('admin.new_product') }}{% endif %}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="field">
+        <label for="name">Product name</label>
+        <input id="name" name="name" value="{{ values['name'] }}" maxlength="80" required>
+      </div>
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="4" maxlength="500">{{ values['description'] }}</textarea>
+        <small>Up to 500 characters. Use synthetic product details only.</small>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label for="category">Collection</label>
+          <select id="category" name="category" required>
+            {% for category in categories %}<option value="{{ category }}" {% if values['category'] == category %}selected{% endif %}>{{ category }}</option>{% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label for="price">Price in rupees</label>
+          <input id="price" name="price" type="number" step="0.01" min="0.01" max="999999.99" value="{{ values['price'] }}" required>
+        </div>
+        <div class="field">
+          <label for="stock">Stock</label>
+          <input id="stock" name="stock" type="number" step="1" min="0" max="10000" value="{{ values['stock'] }}" required>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="button" type="submit">{% if product %}Save changes{% else %}Add product{% endif %}</button>
+        <a class="button button-secondary" href="{{ url_for('admin.products') }}">Cancel</a>
+      </div>
+    </form>
+  </section>
+  <aside class="summary">
+    <p class="eyebrow">LOCAL CATALOGUE</p>
+    <h2>A clear product card.</h2>
+    <p class="muted">Keep names readable, descriptions practical, and prices realistic for the campus shop.</p>
+    <p class="muted">Products referenced by carts or previous orders cannot be deleted.</p>
+  </aside>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Administrator sign in{% endblock %}
+{% block content %}
+<section class="account-layout">
+  <div class="account-intro">
+    <p class="eyebrow">THE LOCAL SHOP DESK</p>
+    <h1>Keep the<br>collection ready.</h1>
+    <p>Use the synthetic administrator account to manage the catalogue and view local lab users.</p>
+    <div class="account-aside">ADMINISTRATOR ACCESS / FACULTY LAB</div>
+  </div>
+  <div class="panel account-panel">
+    <h2>Administrator sign in</h2>
+    <p class="muted">This area requires the administrator role.</p>
+    {% if error %}<div class="notice notice-error" role="alert">{{ error }}</div>{% endif %}
+    <form class="stack" method="post" action="{{ url_for('admin.login') }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="field">
+        <label for="username">Username</label>
+        <input id="username" name="username" value="{{ username }}" maxlength="32" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" maxlength="128" autocomplete="current-password" required>
+      </div>
+      <button class="button full-width" type="submit">Sign in to manage <span aria-hidden="true">→</span></button>
+    </form>
+    <p class="account-switch">Shopping instead? <a href="{{ url_for('public.login') }}">Customer sign in</a></p>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Manage products{% endblock %}
+{% block content %}
+<header class="page-heading">
+  <p class="eyebrow">ADMINISTRATOR / THE COLLECTION</p>
+  <h1>Keep the shop stocked.</h1>
+  <p>Create, edit, and remove local products. Products used in carts or orders are retained.</p>
+</header>
+<div class="section-heading">
+  <h2>{{ products|length }} products</h2>
+  <a class="button" href="{{ url_for('admin.new_product') }}">Add a product <span aria-hidden="true">+</span></a>
+</div>
+{% if error %}<div class="notice notice-error" role="alert">{{ error }}</div>{% endif %}
+{% if products %}
+<div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th>Product</th><th>Collection</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead>
+    <tbody>
+      {% for product in products %}
+      <tr data-product-id="{{ product['id'] }}">
+        <td><a href="{{ url_for('public.product_detail', product_id=product['id']) }}">{{ product['name'] }}</a><small>#{{ product['id'] }}</small></td>
+        <td>{{ product['category'] }}</td>
+        <td>{{ product['price']|money }}</td>
+        <td>{{ product['stock'] }}</td>
+        <td>
+          <div class="actions">
+            <a class="button button-secondary" href="{{ url_for('admin.edit_product', product_id=product['id']) }}">Edit</a>
+            <form class="inline-form" method="post" action="{{ url_for('admin.delete_product', product_id=product['id']) }}">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+              <button class="button button-danger" type="submit">Delete</button>
+            </form>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<section class="empty-state"><h2>The collection is empty.</h2><p>Add a product to get the local shop ready.</p><a class="button" href="{{ url_for('admin.new_product') }}">Add the first product</a></section>
+{% endif %}
+{% endblock %}

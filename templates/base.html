@@ -52,7 +52,7 @@
 <strong>SecureShop.</strong>
 <span>A small shop. A practical security lab.</span>
 </div>
-    <p>Local university assignment · no real purchases or personal data</p>
+    <p>Local university assignment · no real purchases or personal data{% if has_admin and not g.user %} · <a href="{{ url_for('admin.login') }}">Admin sign in</a>{% endif %}</p>
   </footer>
   {% block scripts %}{% endblock %}
 </body>

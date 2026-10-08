@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Local users{% endblock %}
+{% block content %}
+<header class="page-heading">
+  <p class="eyebrow">ADMINISTRATOR / LOCAL ACCOUNTS</p>
+  <h1>The lab's people.</h1>
+  <p>A read-only list of synthetic accounts. Passwords and password hashes are never included.</p>
+</header>
+{% if users %}
+<div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th>ID</th><th>Username</th><th>Synthetic email</th><th>Role</th><th>Created</th></tr></thead>
+    <tbody>
+      {% for user in users %}
+      <tr data-user-id="{{ user['id'] }}">
+        <td>#{{ user['id'] }}</td>
+        <td>{{ user['username'] }}</td>
+        <td>{{ user['email'] }}</td>
+        <td><span class="badge">{{ user['role'] }}</span></td>
+        <td>{{ user['created_at'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<section class="empty-state"><h2>No accounts to show.</h2><p>Reset the seed database to restore the synthetic demo accounts.</p></section>
+{% endif %}
+{% endblock %}
