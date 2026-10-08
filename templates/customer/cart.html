@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Your cart · SecureShop{% endblock %}
+{% block content %}
+<div class="page-heading"><p class="eyebrow">NEXT STOP: CHECKOUT</p><h1>Your cart</h1><p>Review your picks. Checkout is a local simulation.</p></div>
+{% if items %}
+<section class="panel"><div class="table-wrap"><table><thead><tr><th>Product</th><th>Price</th><th>Quantity</th><th>Subtotal</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody>
+{% for item in items %}<tr><td><a href="{{ url_for('public.product_detail', product_id=item.product_id) }}">{{ item.name }}</a></td><td>{{ item.price|money }}</td><td>{{ item.quantity }}</td><td>{{ (item.price * item.quantity)|money }}</td><td><form action="{{ url_for('customer.cart_remove') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="item_id" value="{{ item.id }}"><button class="text-button" type="submit">Remove</button></form></td></tr>{% endfor %}
+</tbody></table></div><div class="checkout-summary"><strong>Total: <span data-cart-total="{{ total }}">{{ total|money }}</span></strong><form action="{{ url_for('customer.checkout') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="button" type="submit">Place demo order</button></form></div><p class="muted">No payment, shipping, or external services are involved.</p></section>
+{% else %}<section class="panel empty-state"><h2>A fresh start.</h2><p>Your cart is empty.</p><a class="button" href="{{ url_for('public.products') }}">Explore the catalogue</a></section>{% endif %}
+{% endblock %}
+

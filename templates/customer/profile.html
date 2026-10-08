@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Your profile · SecureShop{% endblock %}
+{% block content %}
+<div class="page-heading"><p class="eyebrow">YOUR ACCOUNT</p><h1>Your profile</h1><p>Your synthetic lab account, at a glance.</p></div>
+<section class="panel narrow"><dl class="details"><dt>Username</dt><dd>{{ g.user.username }}</dd><dt>Email</dt><dd>{{ g.user.email }}</dd><dt>Role</dt><dd>{{ g.user.role }}</dd><dt>Created</dt><dd>{{ g.user.created_at }}</dd></dl><a class="button secondary" href="{{ url_for('customer.orders') }}">View order history</a></section>
+{% endblock %}
+

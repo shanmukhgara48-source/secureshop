@@ -65,6 +65,15 @@ def create_app(test_config=None):
     def money(paise):
         return f"₹{int(paise) / 100:,.2f}"
 
+    @app.context_processor
+    def navigation_state():
+        count = 0
+        if g.get("user") is not None:
+            count = get_db().execute(
+                "SELECT COALESCE(SUM(quantity), 0) FROM cart_items WHERE user_id = ?", (g.user["id"],)
+            ).fetchone()[0]
+        return {"cart_count": count, "has_admin": "admin.products" in app.view_functions}
+
     @app.errorhandler(CSRFError)
     def csrf_error(error):
         return render_template("error.html", code=400, message="The form expired or could not be verified. Reload the page and try again."), 400
@@ -81,14 +90,13 @@ def create_app(test_config=None):
         app.logger.error("Request failed (%s)", type(error).__name__)
         return render_template("error.html", code=500, message="Something went wrong. Please try again."), 500
 
-    @app.get("/")
-    def index():
-        get_db().execute("SELECT COUNT(*) FROM products").fetchone()
-        return render_template("foundation.html")
+    from routes.public import bp as public_bp
+    from routes.customer import bp as customer_bp
+    app.register_blueprint(public_bp)
+    app.register_blueprint(customer_bp)
 
     return app
 
 
 if __name__ == "__main__":
     create_app().run(host="127.0.0.1", port=8080, debug=False, use_reloader=False, threaded=False)
-

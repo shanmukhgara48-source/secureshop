@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}{{ product['name'] }}{% endblock %}
+{% block content %}
+<a class="text-link back-link" href="{{ url_for('public.products') }}">← Back to the collection</a>
+<section class="product-detail" data-product-id="{{ product['id'] }}">
+  <div class="product-art art-{{ product['category']|lower }} detail-art">
+<span class="art-caption">THE {{ product['category']|upper }} EDIT</span>
+<span class="product-symbol" aria-hidden="true">{{ product['category'][0] }}</span>
+<span class="art-number" aria-hidden="true">{{ '%02d'|format(product['id']) }}</span>
+</div>
+  <div class="product-detail-copy">
+<p class="eyebrow">{{ product['category'] }} / CAMPUS ESSENTIALS</p>
+<h1>{{ product['name'] }}</h1>
+<p class="detail-price">{{ product['price']|money }}</p>
+<p class="detail-description">{{ product['description'] }}</p>
+<p class="stock-note">
+{% if product['stock'] %}● {{ product['stock'] }} available in the local shop{% else %}Currently out of stock{% endif %}
+</p>
+    {% if g.user %}
+<form class="stack" method="post" action="{{ url_for('customer.cart_add') }}">
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<input type="hidden" name="product_id" value="{{ product['id'] }}">
+<div class="field quantity-field">
+<label for="quantity">Quantity</label>
+<input id="quantity" name="quantity" type="number" value="1" min="1" max="{{ [product['stock'], 99]|min }}" required {% if not product['stock'] %}disabled{% endif %}>
+</div>
+<button class="button" type="submit" {% if not product['stock'] %}disabled{% endif %}>Add to cart <span aria-hidden="true">+</span>
+</button>
+</form>
+{% else %}
+<a class="button" href="{{ url_for('public.login') }}">Sign in to add to your cart</a>
+{% endif %}
+    <p class="detail-note">A synthetic product for the faculty lab. Checkout places a simulated order without payment.</p>
+  </div>
+</section>
+{% endblock %}

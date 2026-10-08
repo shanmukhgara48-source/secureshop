@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>{% block title %}SecureShop{% endblock %} · Local campus shop</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body {% if g.user %}data-authenticated="true"{% else %}data-authenticated="false"{% endif %}>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="lab-strip">UNIVERSITY SECURITY LAB <span>Local demo · synthetic data only</span>
+</div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{ url_for('public.home') }}">
+<span class="brand-mark" aria-hidden="true">S</span>SecureShop<span class="brand-dot">.</span>
+</a>
+      <nav aria-label="Main navigation">
+        <a href="{{ url_for('public.home') }}">Home</a>
+        <a href="{{ url_for('public.products') }}">Shop</a>
+        {% if g.user %}
+          <a href="{{ url_for('customer.orders') }}">Orders</a>
+          <a href="{{ url_for('customer.cart') }}">Cart <span class="cart-count" data-cart-count="{{ cart_count }}">{{ cart_count }}</span>
+</a>
+          <a href="{{ url_for('customer.profile') }}">Profile</a>
+          {% if has_admin and g.user['role'] == 'admin' %}
+            <a href="{{ url_for('admin.products') }}">Manage products</a>
+            <a href="{{ url_for('admin.users') }}">Users</a>
+          {% endif %}
+          <form class="inline-form" method="post" action="{{ url_for('customer.logout') }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button class="nav-button" type="submit">Sign out</button>
+          </form>
+        {% else %}
+          <a href="{{ url_for('public.login') }}">Sign in</a>
+          <a class="nav-register" href="{{ url_for('public.register') }}">Create account</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="site-main">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="notice notice-{{ category }}" role="status">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <div>
+<strong>SecureShop.</strong>
+<span>A small shop. A practical security lab.</span>
+</div>
+    <p>Local university assignment · no real purchases or personal data</p>
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,4 +1,10 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>{{ code }} · SecureShop</title></head>
-<body><main><h1>{{ code }}</h1><p>{{ message }}</p><a href="/">Return to SecureShop</a></main></body></html>
-
+{% extends 'base.html' %}
+{% block title %}{{ code }}{% endblock %}
+{% block content %}
+<section class="empty-state error-state">
+<p class="eyebrow">REQUEST {{ code }}</p>
+<h1>{{ code }}</h1>
+<p>{{ message }}</p>
+<a class="button" href="{{ url_for('public.home') }}">Return to SecureShop</a>
+</section>
+{% endblock %}

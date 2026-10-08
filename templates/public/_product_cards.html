@@ -1,0 +1,36 @@
+<div class="product-grid">
+  {% for product in products %}
+  <article class="product-card" data-category="{{ product['category'] }}" data-product-id="{{ product['id'] }}">
+    <a class="product-art art-{{ product['category']|lower }}" href="{{ url_for('public.product_detail', product_id=product['id']) }}" aria-label="View {{ product['name'] }}">
+      <span class="art-caption">{{ product['category'] }}</span>
+      <span class="product-symbol" aria-hidden="true">{{ product['category'][0] }}</span>
+      <span class="art-number" aria-hidden="true">{{ '%02d'|format(product['id']) }}</span>
+    </a>
+    <div class="product-card-body">
+      <p class="eyebrow">{{ product['category'] }}</p>
+      <h2>
+<a href="{{ url_for('public.product_detail', product_id=product['id']) }}">{{ product['name'] }}</a>
+</h2>
+      <p class="product-description">{{ product['description'] }}</p>
+      <div class="product-price-row">
+<strong>{{ product['price']|money }}</strong>
+<span class="stock-label">
+{% if product['stock'] %}{{ product['stock'] }} in stock{% else %}Sold out{% endif %}
+</span>
+</div>
+      {% if g.user %}
+      <form class="add-to-cart-form" method="post" action="{{ url_for('customer.cart_add') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="product_id" value="{{ product['id'] }}">
+        <input type="hidden" name="quantity" value="1">
+        <button class="button button-secondary full-width" type="submit" {% if not product['stock'] %}disabled{% endif %}>Add to cart <span aria-hidden="true">+</span>
+</button>
+      </form>
+      {% else %}
+        <a class="button button-secondary full-width" href="{{ url_for('public.login') }}">Sign in to add <span aria-hidden="true">↗</span>
+</a>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
