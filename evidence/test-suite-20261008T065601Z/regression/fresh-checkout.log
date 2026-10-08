@@ -1,0 +1,10 @@
+COMMAND ["git", "checkout", "--detach", "a564617796a857dd482e8fe6daa7244d92ef484b"]
+CWD /Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop/.instance/full-suite/fresh-clone
+START 2026-10-08T07:02:43.327290+00:00
+END 2026-10-08T07:02:43.391643+00:00
+EXIT 0
+
+STDOUT
+
+STDERR
+HEAD is now at a564617 Improve storefront UI and shared code quality while preserving lab weaknesses

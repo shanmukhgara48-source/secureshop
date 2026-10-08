@@ -1,0 +1,11 @@
+git rev-parse HEAD
+a564617796a857dd482e8fe6daa7244d92ef484b
+git diff --exit-code
+EXIT 0
+
+git check-ignore .instance/full-suite/fresh-clone
+EXIT 0
+.instance/full-suite/fresh-clone
+
+git status --short
+?? evidence/test-suite-20261008T065601Z/

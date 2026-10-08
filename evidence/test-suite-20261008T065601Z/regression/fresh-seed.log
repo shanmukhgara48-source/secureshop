@@ -1,0 +1,10 @@
+COMMAND ["/Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop/.instance/full-suite/fresh-clone/.venv/bin/python", "seed.py"]
+CWD /Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop/.instance/full-suite/fresh-clone
+START 2026-10-08T07:02:46.498768+00:00
+END 2026-10-08T07:02:47.123584+00:00
+EXIT 0
+
+STDOUT
+Reset shop.db: 2 customers, 1 admin, 12 products, 6 orders. Demo credentials are in README.md.
+
+STDERR

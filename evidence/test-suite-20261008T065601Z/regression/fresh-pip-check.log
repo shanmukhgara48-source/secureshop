@@ -1,0 +1,10 @@
+COMMAND ["/Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop/.instance/full-suite/fresh-clone/.venv/bin/python", "-m", "pip", "check"]
+CWD /Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop/.instance/full-suite/fresh-clone
+START 2026-10-08T07:02:46.351984+00:00
+END 2026-10-08T07:02:46.498443+00:00
+EXIT 0
+
+STDOUT
+No broken requirements found.
+
+STDERR

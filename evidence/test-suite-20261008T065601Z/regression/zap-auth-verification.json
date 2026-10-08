@@ -1,0 +1,81 @@
+{
+  "testedAt": "2026-10-08T07:10:00.290425+00:00",
+  "zapVersion": "2.17.0",
+  "contextId": 3,
+  "appOrigin": "http://127.0.0.1:8080",
+  "mode": "protect",
+  "boundary": "Normal ZAP authenticateAsUser login and direct loopback GETs using each private user session; no configuration changes or scans. No cookies, credentials, CSRF tokens, auth bodies, or API keys are saved.",
+  "users": [
+    {
+      "username": "customer_a",
+      "zapUserId": 80,
+      "zapReportedAuthSuccessful": "true",
+      "privateSessionPresent": true,
+      "profileHttpStatus": 200,
+      "authenticatedMarker": "true",
+      "expectedUsernameFound": true,
+      "adminUserListHttpStatus": 403,
+      "expectedAdminAccess": 403,
+      "pass": true,
+      "authenticationState": {
+        "lastSuccessfulAuthTimeInMs": "1791443400416",
+        "lastAuthHistoryId": "234",
+        "lastPollResult": null,
+        "requestsSinceLastPoll": "0",
+        "lastPollTimeInMs": "0"
+      },
+      "lastAuthFailurePresent": false
+    },
+    {
+      "username": "customer_b",
+      "zapUserId": 81,
+      "zapReportedAuthSuccessful": "true",
+      "privateSessionPresent": true,
+      "profileHttpStatus": 200,
+      "authenticatedMarker": "true",
+      "expectedUsernameFound": true,
+      "adminUserListHttpStatus": 403,
+      "expectedAdminAccess": 403,
+      "pass": true,
+      "authenticationState": {
+        "lastSuccessfulAuthTimeInMs": "1791443400514",
+        "lastAuthHistoryId": "239",
+        "lastPollResult": null,
+        "requestsSinceLastPoll": "0",
+        "lastPollTimeInMs": "0"
+      },
+      "lastAuthFailurePresent": false
+    },
+    {
+      "username": "admin",
+      "zapUserId": 82,
+      "zapReportedAuthSuccessful": "true",
+      "privateSessionPresent": true,
+      "profileHttpStatus": 200,
+      "authenticatedMarker": "true",
+      "expectedUsernameFound": true,
+      "adminUserListHttpStatus": 200,
+      "expectedAdminAccess": 200,
+      "pass": true,
+      "authenticationState": {
+        "lastSuccessfulAuthTimeInMs": "1791443400579",
+        "lastAuthHistoryId": "241",
+        "lastPollResult": null,
+        "requestsSinceLastPoll": "0",
+        "lastPollTimeInMs": "0"
+      },
+      "lastAuthFailurePresent": false
+    }
+  ],
+  "sources": [
+    "https://www.zaproxy.org/docs/desktop/start/features/authmethods/",
+    "https://raw.githubusercontent.com/zaproxy/zaproxy/v2.17.0/zap/src/main/java/org/zaproxy/zap/authentication/PostBasedAuthenticationMethodType.java",
+    "https://raw.githubusercontent.com/zaproxy/zaproxy/v2.17.0/zap/src/main/java/org/zaproxy/zap/extension/users/UsersAPI.java"
+  ],
+  "anonymousProfile": {
+    "httpStatus": 302,
+    "location": "/login",
+    "pass": true
+  },
+  "overallPass": true
+}

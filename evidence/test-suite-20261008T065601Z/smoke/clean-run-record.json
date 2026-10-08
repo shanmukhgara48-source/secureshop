@@ -1,0 +1,10 @@
+{
+  "sourceCommit": "a564617796a857dd482e8fe6daa7244d92ef484b",
+  "runs": 3,
+  "passed": 3,
+  "seedBeforeEveryRun": true,
+  "serverStoppedForEveryReset": true,
+  "database": "fresh-clone/shop.db",
+  "sourceDiff": false,
+  "workingTreeMarkerNote": "Later helpers report modified because earlier runs created untracked evidence files. Tracked source remained unchanged."
+}

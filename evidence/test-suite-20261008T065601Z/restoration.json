@@ -1,0 +1,18 @@
+{
+  "checkedAtUtc": "2026-10-08T07:15:28.644167+00:00",
+  "originalDatabaseSha256Before": "cef2dd160c2da1e547050ccadb6a34c87183b1e21f76adce8e71258876eb3538",
+  "originalDatabaseSha256After": "cef2dd160c2da1e547050ccadb6a34c87183b1e21f76adce8e71258876eb3538",
+  "originalDatabaseUnchanged": true,
+  "restoredOriginalApplication": true,
+  "httpHealth": {
+    "status": 200,
+    "anonymousMarkerVerified": true
+  },
+  "serverOrigin": "http://127.0.0.1:8080",
+  "temporaryFixtureStopped": true,
+  "temporaryCloneServerStopped": true,
+  "applicationSourceUnchanged": true,
+  "vulnerableTagPreserved": "d347eb7c2404001fae0a2f43706be6e682afc7d4",
+  "privateZapSessionSaved": true,
+  "zapMode": "protect"
+}

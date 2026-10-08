@@ -1,0 +1,32 @@
+COMMAND ["/Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop/.venv/bin/python", "-m", "unittest", "discover", "-v"]
+CWD /Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop
+START 2026-10-08T06:58:35.761714+00:00
+END 2026-10-08T06:58:41.215267+00:00
+EXIT 0
+
+STDOUT
+
+STDERR
+test_admin_cannot_delete_referenced_product (tests.test_app.SecureShopTests.test_admin_cannot_delete_referenced_product) ... ok
+test_admin_management_requires_admin_role (tests.test_app.SecureShopTests.test_admin_management_requires_admin_role) ... ok
+test_admin_product_create_edit_delete_and_user_listing (tests.test_app.SecureShopTests.test_admin_product_create_edit_delete_and_user_listing) ... ok
+test_authentication_throttle_is_isolated_between_apps (tests.test_app.SecureShopTests.test_authentication_throttle_is_isolated_between_apps) ... ok
+test_cart_add_and_remove_are_owner_scoped (tests.test_app.SecureShopTests.test_cart_add_and_remove_are_owner_scoped) ... ok
+test_cart_rejects_invalid_quantities_and_excess_stock (tests.test_app.SecureShopTests.test_cart_rejects_invalid_quantities_and_excess_stock) ... ok
+test_checkout_insufficient_stock_preserves_orders_cart_and_stock (tests.test_app.SecureShopTests.test_checkout_insufficient_stock_preserves_orders_cart_and_stock) ... ok
+test_checkout_uses_stored_money_and_clears_only_owner_cart (tests.test_app.SecureShopTests.test_checkout_uses_stored_money_and_clears_only_owner_cart) ... ok
+test_local_host_debug_and_cookie_contract (tests.test_app.SecureShopTests.test_local_host_debug_and_cookie_contract) ... ok
+test_missing_or_invalid_csrf_rejects_post_without_mutation (tests.test_app.SecureShopTests.test_missing_or_invalid_csrf_rejects_post_without_mutation) ... ok
+test_money_display_preserves_exact_paise_including_large_integers (tests.test_app.SecureShopTests.test_money_display_preserves_exact_paise_including_large_integers) ... ok
+test_mutations_require_post (tests.test_app.SecureShopTests.test_mutations_require_post) ... ok
+test_order_history_shows_only_logged_in_users_orders (tests.test_app.SecureShopTests.test_order_history_shows_only_logged_in_users_orders) ... ok
+test_product_illustrations_use_known_local_paths_and_category_fallback (tests.test_app.SecureShopTests.test_product_illustrations_use_known_local_paths_and_category_fallback) ... ok
+test_registration_ignores_role_and_hashes_password (tests.test_app.SecureShopTests.test_registration_ignores_role_and_hashes_password) ... ok
+test_registration_rejects_duplicate_username_case_insensitively (tests.test_app.SecureShopTests.test_registration_rejects_duplicate_username_case_insensitively) ... ok
+test_registration_requires_valid_synthetic_account_fields (tests.test_app.SecureShopTests.test_registration_requires_valid_synthetic_account_fields) ... ok
+test_unknown_user_and_wrong_password_have_generic_login_errors (tests.test_app.SecureShopTests.test_unknown_user_and_wrong_password_have_generic_login_errors) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 5.154s
+
+OK

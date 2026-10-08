@@ -1,0 +1,203 @@
+{
+  "startedAtUtc": "2026-10-08T07:08:49.929440+00:00",
+  "sourceCommit": "a564617796a857dd482e8fe6daa7244d92ef484b",
+  "target": "http://127.0.0.1:8080",
+  "mode": "protect",
+  "contextId": "3",
+  "contextName": "SecureShop baseline 2026-10-08",
+  "policyName": "SecureShop bounded GET baseline",
+  "formsProcessed": false,
+  "formsPosted": false,
+  "excludedMutationRoutes": [
+    "/logout",
+    "/checkout",
+    "/admin/products/<id>/delete"
+  ],
+  "scanType": "Traditional spider plus passive analysis; bounded GET-only active scan",
+  "databaseFreshSeed": true,
+  "phases": [
+    {
+      "type": "spider",
+      "role": "anonymous",
+      "id": "0",
+      "startedAtUtc": "2026-10-08T07:08:50.005203+00:00",
+      "completionPercent": 100,
+      "finishedAtUtc": "2026-10-08T07:13:53.515111+00:00"
+    },
+    {
+      "type": "active",
+      "role": "anonymous",
+      "url": "/search?q=notebook",
+      "method": "GET",
+      "recurse": false,
+      "id": "0",
+      "startedAtUtc": "2026-10-08T07:09:41.363075+00:00",
+      "completionPercent": 100,
+      "finishedAtUtc": "2026-10-08T07:13:53.575040+00:00",
+      "messageCount": 131
+    },
+    {
+      "type": "spider",
+      "role": "customer_a",
+      "id": "1",
+      "startedAtUtc": "2026-10-08T07:10:37.045948+00:00",
+      "timestampNote": "Recorded after scan start while normalizing scanAsUser response key.",
+      "completionPercent": 100,
+      "finishedAtUtc": "2026-10-08T07:13:53.579581+00:00"
+    },
+    {
+      "type": "spider",
+      "role": "customer_b",
+      "id": "2",
+      "startedAtUtc": "2026-10-08T07:10:37.054870+00:00",
+      "completionPercent": 100,
+      "finishedAtUtc": "2026-10-08T07:13:53.711514+00:00"
+    },
+    {
+      "type": "spider",
+      "role": "admin",
+      "id": "3",
+      "startedAtUtc": "2026-10-08T07:10:37.060449+00:00",
+      "completionPercent": 100,
+      "finishedAtUtc": "2026-10-08T07:13:53.828133+00:00"
+    },
+    {
+      "type": "active",
+      "role": "anonymous",
+      "url": "/search?q=notebook",
+      "method": "GET",
+      "recurse": false,
+      "id": "1",
+      "sqlRuleStrength": "HIGH",
+      "startedAtUtc": "2026-10-08T07:11:21.367369+00:00",
+      "completionPercent": 100,
+      "finishedAtUtc": "2026-10-08T07:13:54.024902+00:00",
+      "messageCount": 164
+    },
+    {
+      "type": "active",
+      "role": "customer_a",
+      "url": "/orders/1",
+      "method": "GET",
+      "recurse": false,
+      "id": "2",
+      "sqlRuleStrength": "HIGH",
+      "startedAtUtc": "2026-10-08T07:11:38.891774+00:00",
+      "completionPercent": 100,
+      "finishedAtUtc": "2026-10-08T07:13:54.044501+00:00",
+      "messageCount": 66
+    },
+    {
+      "type": "active",
+      "role": "customer_b",
+      "url": "/profile",
+      "method": "GET",
+      "recurse": false,
+      "id": "3",
+      "sqlRuleStrength": "HIGH",
+      "startedAtUtc": "2026-10-08T07:11:38.931744+00:00",
+      "completionPercent": 100,
+      "finishedAtUtc": "2026-10-08T07:13:54.053632+00:00",
+      "messageCount": 89
+    },
+    {
+      "type": "active",
+      "role": "admin",
+      "url": "/admin/products",
+      "method": "GET",
+      "recurse": false,
+      "id": "4",
+      "sqlRuleStrength": "HIGH",
+      "startedAtUtc": "2026-10-08T07:11:38.959632+00:00",
+      "completionPercent": 100,
+      "finishedAtUtc": "2026-10-08T07:13:54.073599+00:00",
+      "messageCount": 79
+    }
+  ],
+  "finishedAtUtc": "2026-10-08T07:13:54.087912+00:00",
+  "passiveQueueRemaining": 0,
+  "activeScans": [
+    {
+      "reqCount": "131",
+      "alertCount": "0",
+      "progress": "100",
+      "newAlertCount": "0",
+      "id": "0",
+      "state": "FINISHED"
+    },
+    {
+      "reqCount": "164",
+      "alertCount": "1",
+      "progress": "100",
+      "newAlertCount": "1",
+      "id": "1",
+      "state": "FINISHED"
+    },
+    {
+      "reqCount": "66",
+      "alertCount": "0",
+      "progress": "100",
+      "newAlertCount": "0",
+      "id": "2",
+      "state": "FINISHED"
+    },
+    {
+      "reqCount": "89",
+      "alertCount": "0",
+      "progress": "100",
+      "newAlertCount": "0",
+      "id": "3",
+      "state": "FINISHED"
+    },
+    {
+      "reqCount": "79",
+      "alertCount": "0",
+      "progress": "100",
+      "newAlertCount": "0",
+      "id": "4",
+      "state": "FINISHED"
+    }
+  ],
+  "activeRequestCount": 529,
+  "alertInstanceCount": 270,
+  "uniqueAlertTypeCount": 10,
+  "severityInstances": {
+    "Medium": 97,
+    "Low": 131,
+    "Informational": 41,
+    "High": 1
+  },
+  "severityTypes": {
+    "Informational": 4,
+    "Medium": 3,
+    "Low": 2,
+    "High": 1
+  },
+  "offOriginDiscoveredUrlCount": 0,
+  "observedUrlCountBeforeSanitization": 83,
+  "completionStatus": "COMPLETE",
+  "redaction": "API key, credentials, cookies, CSRF values, raw attack/evidence/body fields are omitted. Nonordinary query values are replaced with [scanner-input]. Exact requests remain only in the private Git-ignored ZAP session.",
+  "limitations": [
+    "Traditional spider; no AJAX spider.",
+    "Spider processes no forms and sends no POST forms; normal mutations were tested by smoke/browser/regression checks.",
+    "Active scans target only GET /search?q=notebook, /orders/1, /profile and /admin/products, with recursion false.",
+    "14 selected built-in rules; no time-based SQL, OS/code execution, XML expansion, cloud metadata or external callback rules.",
+    "Only the general SQL rule was expanded from LOW to HIGH after the first scan; all scanning remains local."
+  ],
+  "zapVersion": "2.17.0",
+  "effectiveIncludeRegex": "^http://127[.]0[.]0[.]1:8080(?:/.*)?$",
+  "effectiveExcludeRegexs": [
+    "^http://127[.]0[.]0[.]1:8080/logout(?:[?].*)?$",
+    "^http://127[.]0[.]0[.]1:8080/checkout(?:[?].*)?$",
+    "^http://127[.]0[.]0[.]1:8080/admin/products/[0-9]+/delete(?:[?].*)?$"
+  ],
+  "activeRequestMethods": {
+    "GET": 529
+  },
+  "activeRequestOrigins": {
+    "127.0.0.1:8080": 529
+  },
+  "recordedHistoryMessageCount": 811,
+  "roleAuthenticationVerified": true,
+  "initialScopeRegexCorrectedBeforeAnyScan": true
+}

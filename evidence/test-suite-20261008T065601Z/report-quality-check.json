@@ -1,0 +1,11 @@
+{
+  "checkedAtUtc": "2026-10-08T07:24:27.745827+00:00",
+  "pdfPages": 10,
+  "pdfBytes": 693049,
+  "pdfSha256": "122bddc2b9525062c6a0a1cc7a77b368d4d319732a6cc3689e22515d7b2b3555",
+  "visualReview": "All ten pages rendered and inspected; affected pages rechecked after final wording/layout updates. No overlap, clipping, broken tables, missing glyphs or orphan pages observed.",
+  "boundsCheck": "All text characters within page margins",
+  "markdownLocalLinksChecked": 61,
+  "tokenShapedEvidenceMatches": 0,
+  "reportFactReview": "Totals/source/scope/limits cross-checked with structured evidence and independent reviewer; SQL connection wording corrected before finalization."
+}

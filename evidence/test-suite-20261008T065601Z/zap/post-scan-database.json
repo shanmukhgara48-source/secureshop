@@ -1,0 +1,11 @@
+{
+  "counts": {
+    "users": 3,
+    "products": 12,
+    "cart_items": 0,
+    "orders": 6,
+    "order_items": 6
+  },
+  "integrityCheck": "ok",
+  "foreignKeyViolations": 0
+}

@@ -1,0 +1,2256 @@
+[
+  {
+    "role": "anonymous",
+    "scanId": "0",
+    "urls": [
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "4",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/robots.txt",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "5",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "6",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/sitemap.xml",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "17",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/login",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "22",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "25",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/register",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "26",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/login",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "29",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=%5Bscanner-input%5D",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "30",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/js/site.js",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "31",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/css/style.css",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "33",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/2",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "35",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/hero-desk.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "37",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/1",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "38",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=Study",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "40",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=Carry",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "41",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=Everyday",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "43",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/notebook.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "44",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/4",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "47",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/5",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "49",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/3",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "59",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/organiser.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "64",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/tote.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "66",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/lamp.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "70",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/11",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "72",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/12",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "74",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/8",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "75",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/7",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "76",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/9",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "77",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/6",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "78",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/10",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "79",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/js/catalogue.js",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "80",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/pouch.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "81",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/backpack.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "82",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/vendor/jquery/jquery-3.4.1.min.js",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "83",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/bottle.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "84",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/cable.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "85",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/cap.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "86",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/stand.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "87",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/mug.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "88",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/mouse.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      }
+    ]
+  },
+  {
+    "role": "customer_a",
+    "scanId": "1",
+    "urls": [
+      {
+        "method": "GET",
+        "statusCode": "302",
+        "processed": "true",
+        "messageId": "278",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/login",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "279",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/10",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "282",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/12",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "285",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/1",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "290",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "291",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/11",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "293",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/robots.txt",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "294",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/4",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "297",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/3",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "299",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/2",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "403",
+        "processed": "true",
+        "messageId": "301",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/login",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "302",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "303",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "310",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/6",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "311",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/sitemap.xml",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "312",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/5",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "313",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/7",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "314",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/8",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "315",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=Everyday",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "316",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/9",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "302",
+        "processed": "true",
+        "messageId": "317",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/register",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "318",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/search?q=notebook",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "319",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "320",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/css",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "321",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/css/style.css",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "322",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "323",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "324",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/js",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "325",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/js/catalogue.js",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "326",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/js/site.js",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "327",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/vendor",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "328",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/vendor/jquery",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "329",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/vendor/jquery/jquery-3.4.1.min.js",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "330",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "334",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/profile",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "335",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=%5Bscanner-input%5D",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "336",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/cart",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "337",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/mouse.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "338",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/cable.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "339",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=Study",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "340",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/notebook.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "341",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/stand.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "342",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=Carry",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "343",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/tote.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "344",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/lamp.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "345",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/organiser.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "346",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/backpack.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "347",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/pouch.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "348",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/bottle.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "349",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/cap.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "350",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/mug.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "351",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders/3",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "353",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/hero-desk.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "354",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders/2",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "355",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders/1",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      }
+    ]
+  },
+  {
+    "role": "customer_b",
+    "scanId": "2",
+    "urls": [
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "434",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "435",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/robots.txt",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "437",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "302",
+        "processed": "true",
+        "messageId": "439",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/login",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "403",
+        "processed": "true",
+        "messageId": "440",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/login",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "446",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/sitemap.xml",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "451",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/cart",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "458",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders/1",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "463",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "469",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders/2",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "471",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders/3",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "475",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/1",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "476",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "477",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/10",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "479",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/11",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "490",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/12",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "502",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/2",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "503",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/3",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "504",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/4",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "505",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/5",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "508",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/7",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "509",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/6",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "510",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/8",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "512",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/9",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "513",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=Carry",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "518",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/profile",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "302",
+        "processed": "true",
+        "messageId": "519",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/register",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "522",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/search?q=notebook",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "523",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "524",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/css",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "526",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/css/style.css",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "528",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "534",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/js",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "535",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "536",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/js/catalogue.js",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "537",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/js/site.js",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "540",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/vendor",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "541",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/vendor/jquery",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "542",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/vendor/jquery/jquery-3.4.1.min.js",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "544",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=Everyday",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "547",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=Study",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "550",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=%5Bscanner-input%5D",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "551",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/hero-desk.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "553",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/notebook.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "554",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/organiser.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "555",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/lamp.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "573",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/tote.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "574",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders/6",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "579",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders/5",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "581",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders/4",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "582",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/bottle.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "583",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/cable.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "586",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/backpack.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "588",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/pouch.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "589",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/cap.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "592",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/mug.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "595",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/mouse.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "596",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/stand.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      }
+    ]
+  },
+  {
+    "role": "admin",
+    "scanId": "3",
+    "urls": [
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "444",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "450",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/robots.txt",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "452",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "453",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/sitemap.xml",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "467",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/cart",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "302",
+        "processed": "true",
+        "messageId": "468",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/login",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "302",
+        "processed": "true",
+        "messageId": "470",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/login",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "473",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders/1",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "474",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "486",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders/3",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "488",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/orders/2",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "489",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "491",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/1",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "499",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/10",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "500",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/11",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "501",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/12",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "506",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/2",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "507",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/3",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "511",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/4",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "514",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/5",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "515",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/6",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "516",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/7",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "517",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/8",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "520",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=Carry",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "521",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products/9",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "525",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/profile",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "302",
+        "processed": "true",
+        "messageId": "527",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/register",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "529",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/search?q=notebook",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "530",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "531",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/css",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "532",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/css/style.css",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "533",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "538",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "539",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/js",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "543",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/js/catalogue.js",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "545",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/js/site.js",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "546",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/vendor",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "404",
+        "processed": "true",
+        "messageId": "548",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/vendor/jquery",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "549",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/vendor/jquery/jquery-3.4.1.min.js",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "552",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "568",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=Everyday",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "571",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=Study",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "572",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/products?category=%5Bscanner-input%5D",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "575",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/hero-desk.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "576",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/notebook.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "577",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/organiser.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "578",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/lamp.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "580",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/tote.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "584",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/bottle.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "585",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/backpack.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "587",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/pouch.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "590",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/cap.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "591",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/mug.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "593",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/cable.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "594",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/stand.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "597",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/static/img/products/mouse.svg",
+        "authenticatedMarker": false,
+        "expectedUsernamePresent": false
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "598",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/users",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "599",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/new",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "601",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/1/edit",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "602",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/3/edit",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "604",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/2/edit",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "606",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/4/edit",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "607",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/5/edit",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "609",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/6/edit",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "612",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/7/edit",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "613",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/8/edit",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "614",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/9/edit",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "618",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/10/edit",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "619",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/11/edit",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      },
+      {
+        "method": "GET",
+        "statusCode": "200",
+        "processed": "true",
+        "messageId": "621",
+        "reasonNotProcessed": "",
+        "url": "http://127.0.0.1:8080/admin/products/12/edit",
+        "authenticatedMarker": true,
+        "expectedUsernamePresent": true
+      }
+    ]
+  }
+]

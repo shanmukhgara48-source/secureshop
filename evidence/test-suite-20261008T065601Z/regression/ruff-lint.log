@@ -1,0 +1,10 @@
+COMMAND ["/Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop/.venv/bin/ruff", "check", "--no-cache", "."]
+CWD /Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop
+START 2026-10-08T06:58:35.762173+00:00
+END 2026-10-08T06:58:35.833297+00:00
+EXIT 0
+
+STDOUT
+All checks passed!
+
+STDERR

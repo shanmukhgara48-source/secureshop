@@ -1,0 +1,183 @@
+
+import ast
+import json
+import sqlite3
+import tempfile
+import unittest
+from contextlib import closing
+from datetime import timedelta
+from html.parser import HTMLParser
+from pathlib import Path
+from unittest.mock import MagicMock, patch
+
+from werkzeug.security import check_password_hash
+from app import create_app
+from seed import DEMO_USERS, PRODUCTS, reset_database
+from tools.replay import LocalClient
+
+ORIGIN='http://127.0.0.1:8080'
+TABLES=('users','products','cart_items','orders','order_items')
+DETAILS={}
+class Page(HTMLParser):
+    def __init__(self, response):
+        super().__init__(convert_charrefs=True); self.csrf=None;self.references=[];self.feed(response.get_data(as_text=True))
+    def handle_starttag(self,tag,attributes):
+        attrs=dict(attributes)
+        if tag=='meta' and attrs.get('name')=='csrf-token':self.csrf=attrs.get('content')
+        if tag=='input' and attrs.get('name')=='csrf_token':self.csrf=attrs.get('value')
+        for key in ('src','href','action'):
+            if attrs.get(key):self.references.append(attrs[key])
+class FocusedTests(unittest.TestCase):
+    def setUp(self):
+        directory=tempfile.TemporaryDirectory(prefix='secureshop-focused-');self.addCleanup(directory.cleanup)
+        self.database=Path(directory.name)/'shop.db';reset_database(self.database)
+        self.app=create_app({'TESTING':True,'DATABASE':str(self.database),'SECRET_KEY':'focused-isolated-test-key-'*3})
+        self.client=self.app.test_client()
+    def query(self,sql,args=()):
+        with closing(sqlite3.connect(self.database)) as connection:return connection.execute(sql,args).fetchall()
+    def change(self,sql,args=()):
+        with closing(sqlite3.connect(self.database)) as connection,connection:connection.execute(sql,args)
+    def state(self):return {table:self.query('SELECT * FROM '+table+' ORDER BY id') for table in TABLES}
+    def get(self,path,client=None,**kwargs):return (client or self.client).get(path,base_url=ORIGIN,**kwargs)
+    def token(self,client=None):return Page(self.get('/products',client)).csrf
+    def post(self,path,data=None,client=None,ajax=False):
+        client=client or self.client;headers={'X-Requested-With':'XMLHttpRequest'} if ajax else {}
+        return client.post(path,data={**(data or {}),'csrf_token':self.token(client)},headers=headers,base_url=ORIGIN)
+    def login(self,client=None,admin=False):
+        response=self.post('/admin/login' if admin else '/login',{'username':'admin' if admin else 'customer_a','password':'AdminDemo!2026' if admin else 'CustomerA!2026'},client)
+        self.assertEqual(response.status_code,302)
+    def product(self,**overrides):
+        data={'name':'Campus paper tray','description':'Synthetic desk accessory.','price':'12.50','category':'Study','stock':'5'};data.update(overrides);return data
+    def test_all_public_and_customer_get_routes_and_local_references(self):
+        for path in ('/','/login','/register','/products','/products/1','/search?q=notebook','/admin/login'):
+            response=self.get(path);self.assertEqual(response.status_code,200,path)
+            self.assertTrue(all(ref.startswith(('/', '#')) for ref in Page(response).references),(path,Page(response).references))
+        for path in ('/profile','/cart','/orders','/orders/1'):
+            self.assertEqual(self.get(path).status_code,302)
+            self.assertEqual(self.get(path,headers={'X-Requested-With':'XMLHttpRequest'}).status_code,401)
+        self.login()
+        for path in ('/profile','/cart','/orders','/orders/1'):
+            response=self.get(path);self.assertEqual(response.status_code,200,path);self.assertEqual(response.headers['Cache-Control'],'no-store')
+    def test_ajax_login_guard_and_cart_fragment_contract(self):
+        before=self.state();self.assertEqual(self.post('/cart/add',{'product_id':'1','quantity':'1'},ajax=True).status_code,401);self.assertEqual(self.state(),before)
+        self.login();response=self.post('/cart/add',{'product_id':'1','quantity':'2'},ajax=True)
+        self.assertEqual(response.status_code,200);html=response.get_data(as_text=True)
+        self.assertIn('data-cart-count="2"',html);self.assertIn('data-success="true"',html);self.assertEqual(self.query('SELECT quantity FROM cart_items'),[(2,)])
+    def test_login_rotates_csrf_and_logout_clears_authentication(self):
+        previous=self.token();self.login();current=self.token();self.assertNotEqual(previous,current)
+        before=self.state();response=self.client.post('/checkout',data={'csrf_token':previous},base_url=ORIGIN)
+        self.assertEqual(response.status_code,400);self.assertEqual(self.state(),before)
+        response=self.post('/logout');self.assertEqual(response.status_code,303);self.assertEqual(response.headers['Cache-Control'],'no-store')
+        with self.client.session_transaction(base_url=ORIGIN) as session:self.assertNotIn('user_id',session);self.assertNotIn('role',session)
+        self.assertEqual(self.get('/profile').status_code,302)
+    def test_expired_csrf_is_generic_and_does_not_mutate(self):
+        token=self.token();self.app.config['WTF_CSRF_TIME_LIMIT']=timedelta(seconds=-1);before=self.state()
+        response=self.client.post('/register',data={'csrf_token':token,'username':'expired_learner','email':'expired@example.invalid','password':'ExpiredLearner!2026'},base_url=ORIGIN)
+        self.assertEqual(response.status_code,400);self.assertEqual(self.state(),before);self.assertNotIn('Traceback',response.get_data(as_text=True))
+    def test_duplicate_email_and_password_boundaries(self):
+        before=self.state();response=self.post('/register',{'username':'other_learner','email':'CUSTOMER.A@EXAMPLE.INVALID','password':'OtherLearner!2026'})
+        self.assertEqual(response.status_code,400);self.assertEqual(self.state(),before)
+        for size in (10,128):
+            response=self.post('/register',{'username':'boundary_'+str(size),'email':'boundary'+str(size)+'@example.invalid','password':'L'*size})
+            self.assertEqual(response.status_code,302)
+            stored=self.query('SELECT password_hash FROM users WHERE username=?',('boundary_'+str(size),))[0][0];self.assertTrue(check_password_hash(stored,'L'*size))
+    def test_admin_invalid_inputs_leave_database_unchanged(self):
+        self.login(admin=True);before=self.state()
+        invalid=({'name':''},{'name':'x'*81},{'description':'x'*501},{'category':'Seasonal'},{'price':'0'},{'price':'-1'},{'price':'1.234'},{'price':'1000000'},{'price':'NaN'},{'stock':'-1'},{'stock':'10001'},{'stock':'2.5'})
+        for overrides in invalid:
+            with self.subTest(fields=list(overrides)):
+                self.assertEqual(self.post('/admin/products/new',self.product(**overrides)).status_code,400);self.assertEqual(self.state(),before)
+        self.assertEqual(self.post('/admin/products/1/edit',self.product(price='0')).status_code,400);self.assertEqual(self.state(),before)
+    def test_admin_valid_money_stock_boundaries_and_escaped_product_text(self):
+        self.login(admin=True)
+        for label,price,stock,stored in (('Minimum','0.01','0',1),('Maximum','999999.99','10000',99999999)):
+            self.assertEqual(self.post('/admin/products/new',self.product(name=label,price=price,stock=stock)).status_code,303)
+            self.assertEqual(self.query('SELECT price,stock FROM products WHERE name=?',(label,)),[(stored,int(stock))])
+        name='Campus <tray> & "pen"';description='A <small> tray & everyday storage.'
+        self.assertEqual(self.post('/admin/products/new',self.product(name=name,description=description)).status_code,303)
+        product_id=self.query('SELECT id FROM products WHERE name=?',(name,))[0][0]
+        for path in ('/products','/products/'+str(product_id),'/admin/products/'+str(product_id)+'/edit'):
+            html=self.get(path).get_data(as_text=True);self.assertIn('&lt;tray&gt;',html);self.assertIn('&amp;',html);self.assertNotIn('<tray>',html);self.assertNotIn('<small>',html)
+        customer=self.app.test_client();self.login(client=customer)
+        minimum_id=self.query('SELECT id FROM products WHERE name=?',('Minimum',))[0][0]
+        before=self.state();self.assertEqual(self.post('/cart/add',{'product_id':str(minimum_id),'quantity':'1'},customer,ajax=True).status_code,400);self.assertEqual(self.state(),before)
+    def test_cart_reference_prevents_admin_delete(self):
+        admin=self.app.test_client();self.login(admin,admin=True);self.assertEqual(self.post('/admin/products/new',self.product(),admin).status_code,303)
+        product_id=self.query('SELECT id FROM products WHERE name=?',('Campus paper tray',))[0][0]
+        self.login();self.assertEqual(self.post('/cart/add',{'product_id':str(product_id),'quantity':'1'},ajax=True).status_code,200)
+        before=self.state();self.assertEqual(self.post('/admin/products/'+str(product_id)+'/delete',client=admin).status_code,409);self.assertEqual(self.state(),before)
+    def test_error_paths_are_generic_and_oversize_forms_are_rejected(self):
+        for path in ('/missing-page','/products/99999'):
+            response=self.get(path);self.assertEqual(response.status_code,404);self.assertNotIn('Traceback',response.get_data(as_text=True))
+        response=self.get('/search',query_string={'q':'x'*121});self.assertEqual(response.status_code,400)
+        response=self.client.post('/login',data=b'x'*(64*1024+1),content_type='application/x-www-form-urlencoded',base_url=ORIGIN)
+        self.assertEqual(response.status_code,413);self.assertNotIn('Traceback',response.get_data(as_text=True))
+        with patch('routes.public.get_db',side_effect=RuntimeError('SYNTHETIC INTERNAL ERROR')):
+            response=self.get('/');self.assertEqual(response.status_code,500);html=response.get_data(as_text=True);self.assertNotIn('SYNTHETIC INTERNAL ERROR',html);self.assertNotIn('Traceback',html)
+    def test_checkout_rollback_after_mid_transaction_database_error(self):
+        self.login()
+        for product_id in (1,2):self.assertEqual(self.post('/cart/add',{'product_id':str(product_id),'quantity':'1'},ajax=True).status_code,200)
+        self.change("CREATE TRIGGER synthetic_checkout_failure BEFORE INSERT ON order_items WHEN NEW.product_id=2 BEGIN SELECT RAISE(ABORT,'Synthetic transaction failure'); END")
+        before=self.state();response=self.post('/checkout');self.assertEqual(response.status_code,500);self.assertEqual(self.state(),before)
+        self.assertNotIn('Synthetic transaction failure',response.get_data(as_text=True));self.assertNotIn('Traceback',response.get_data(as_text=True))
+    def test_history_price_snapshots_survive_edit_and_multi_item_checkout(self):
+        admin=self.app.test_client();self.login(admin,admin=True)
+        self.assertEqual(self.post('/admin/products/1/edit',self.product(name='Everyday notebook',price='300.01',stock='35'),admin).status_code,303)
+        self.assertEqual(self.query('SELECT unit_price FROM order_items WHERE order_id=1'),[(24900,)]);self.assertEqual(self.query('SELECT total FROM orders WHERE id=1'),[(24900,)])
+        self.login()
+        for product_id,quantity in ((1,2),(2,1)):self.assertEqual(self.post('/cart/add',{'product_id':str(product_id),'quantity':str(quantity)},ajax=True).status_code,200)
+        response=self.post('/checkout');self.assertEqual(response.status_code,303)
+        order_id,total=self.query('SELECT id,total FROM orders ORDER BY id DESC LIMIT 1')[0];self.assertEqual((order_id,total),(7,99902))
+        self.assertEqual(self.query('SELECT product_id,quantity,unit_price FROM order_items WHERE order_id=? ORDER BY product_id',(order_id,)),[(1,2,30001),(2,1,39900)])
+        self.assertEqual(self.query('SELECT stock FROM products WHERE id IN (1,2) ORDER BY id'),[(33,),(21,)])
+    def test_login_throttle_expires_and_success_clears_failures(self):
+        now=[100.0]
+        with patch('auth.time.monotonic',side_effect=lambda:now[0]):
+            for _ in range(5):self.assertEqual(self.post('/login',{'username':'customer_a','password':'WrongPassword!2026'}).status_code,400)
+            self.assertEqual(self.post('/login',{'username':'customer_a','password':'CustomerA!2026'}).status_code,400)
+            now[0]+=61;self.login();self.assertEqual(self.app.extensions['login_attempts'],{})
+        customer_as_admin=self.app.test_client();response=self.post('/admin/login',{'username':'customer_a','password':'CustomerA!2026'},customer_as_admin);self.assertEqual(response.status_code,400)
+    def test_invalid_sessions_and_database_role_changes_remove_access(self):
+        with self.client.session_transaction(base_url=ORIGIN) as session:session['user_id']=99999;session['role']='admin'
+        self.assertEqual(self.get('/admin/users').status_code,302)
+        with self.client.session_transaction(base_url=ORIGIN) as session:self.assertFalse(dict(session))
+        self.login(admin=True);self.change('UPDATE users SET role=? WHERE id=?',('customer',3));self.assertEqual(self.get('/admin/users').status_code,403)
+        tampered=self.app.test_client();self.login(tampered);cookie=tampered.get_cookie('secureshop_session',domain='127.0.0.1');self.assertIsNotNone(cookie)
+        value=cookie.value;middle=len(value)//2;tampered.set_cookie('secureshop_session',value[:middle]+('A' if value[middle]!='A' else 'B')+value[middle+1:],domain='127.0.0.1')
+        self.assertEqual(self.get('/profile',tampered).status_code,302)
+    def test_replay_rejects_external_targets_and_redirects_without_network(self):
+        with patch('tools.replay.http.client.HTTPConnection',side_effect=AssertionError('Unexpected network')):
+            with self.assertRaises(ValueError):LocalClient('http://example.invalid:8080')
+            with self.assertRaises(ValueError):LocalClient().get('https://example.invalid/products')
+        fake=MagicMock();response=MagicMock();response.status=302;response.read.return_value=b'';response.getheaders.return_value=[('Location','https://example.invalid/products')];response.headers.get_all.return_value=[];fake.getresponse.return_value=response
+        with patch('tools.replay.http.client.HTTPConnection',return_value=fake) as constructor:
+            with self.assertRaises(ValueError):LocalClient().get('/products')
+            constructor.assert_called_once_with('127.0.0.1',8080,timeout=10)
+        self.assertEqual(LocalClient.local_path(ORIGIN+'/products?q=notebook'),'/products?q=notebook')
+    def test_seed_invariants_and_idempotent_reset(self):
+        self.assertEqual([self.query('SELECT COUNT(*) FROM '+table)[0][0] for table in TABLES],[3,12,0,6,6])
+        self.assertEqual(self.query('SELECT id,user_id FROM orders ORDER BY id'),[(1,1),(2,1),(3,1),(4,2),(5,2),(6,2)])
+        self.assertEqual(self.query('SELECT DISTINCT category FROM products ORDER BY category'),[('Carry',),('Everyday',),('Study',),('Tech',)])
+        for uid,name,email,password,role in DEMO_USERS:
+            row=self.query('SELECT username,email,password_hash,role FROM users WHERE id=?',(uid,))[0];self.assertEqual((row[0],row[1],row[3]),(name,email,role));self.assertTrue(email.endswith('.invalid'));self.assertTrue(check_password_hash(row[2],password))
+        self.assertEqual(self.query('PRAGMA foreign_key_check'),[]);self.assertEqual(self.query('PRAGMA integrity_check'),[('ok',)])
+        self.assertEqual(self.query('SELECT o.id FROM orders o JOIN order_items i ON i.order_id=o.id GROUP BY o.id HAVING o.total != SUM(i.quantity*i.unit_price)'),[])
+        before={table:self.query('SELECT * FROM '+table+' ORDER BY id') for table in TABLES if table!='users'}
+        hashes=self.query('SELECT password_hash FROM users ORDER BY id');self.change('UPDATE products SET stock=0 WHERE id=1');reset_database(self.database)
+        self.assertEqual({table:self.query('SELECT * FROM '+table+' ORDER BY id') for table in TABLES if table!='users'},before);self.assertNotEqual(self.query('SELECT password_hash FROM users ORDER BY id'),hashes)
+        self.assertEqual(self.query('SELECT seq FROM sqlite_sequence WHERE name=?',('orders',)),[(6,)])
+        DETAILS['seed']={'counts':{'users':3,'products':12,'cart_items':0,'orders':6,'order_items':6},'customerAOrderIds':[1,2,3],'customerBOrderIds':[4,5,6],'categories':4,'foreignKeyCheck':'empty','integrityCheck':'ok','passwordRehashesOnReset':True,'applicationDataDeterministicOnReset':True}
+    def test_template_compilation_python_syntax_and_fixed_loopback_entrypoint(self):
+        templates=self.app.jinja_env.list_templates()
+        for name in templates:self.app.jinja_env.get_template(name)
+        self.assertTrue(self.app.jinja_env.autoescape)
+        paths=sorted(p for p in Path('.').rglob('*.py') if not any(part in ('.venv','.git','.ruff_cache','.instance','__pycache__','evidence') for part in p.parts))
+        for path in paths:compile(path.read_text(),str(path),'exec')
+        tree=ast.parse(Path('app.py').read_text());run_calls=[node for node in ast.walk(tree) if isinstance(node,ast.Call) and isinstance(node.func,ast.Attribute) and node.func.attr=='run'];self.assertEqual(len(run_calls),1)
+        keywords={k.arg:ast.literal_eval(k.value) for k in run_calls[0].keywords};self.assertEqual(keywords,{'host':'127.0.0.1','port':8080,'debug':False,'use_reloader':False,'threaded':False})
+        DETAILS['compile']={'templates':len(templates),'pythonFiles':len(paths),'entrypoint':keywords}
+
+suite=unittest.defaultTestLoader.loadTestsFromTestCase(FocusedTests)
+result=unittest.TextTestRunner(verbosity=2).run(suite)
+print('STRUCTURED '+json.dumps({'testsRun':result.testsRun,'failures':len(result.failures),'errors':len(result.errors),'skipped':len(result.skipped),'testNames':[name for name in dir(FocusedTests) if name.startswith('test_')],'details':DETAILS,'isolatedDatabases':True,'actualNetworkConnections':0}))
+raise SystemExit(0 if result.wasSuccessful() else 1)

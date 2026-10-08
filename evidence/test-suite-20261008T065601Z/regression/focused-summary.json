@@ -1,0 +1,82 @@
+{
+  "name": "focused-isolated-controls",
+  "sourceCommit": "a564617796a857dd482e8fe6daa7244d92ef484b",
+  "command": [
+    "/Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop/.venv/bin/python",
+    "-"
+  ],
+  "sourceLog": "focused-helper-source.txt",
+  "sourceSha256": "2bda2ab64d8d83669e3d6b6e1a044911e98af4b0cdbc0d7a1576641e45e01d86",
+  "startedAt": "2026-10-08T07:03:06.096931+00:00",
+  "finishedAt": "2026-10-08T07:03:11.826178+00:00",
+  "exitCode": 0,
+  "outcomes": {
+    "testsRun": 16,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "testNames": [
+      "test_admin_invalid_inputs_leave_database_unchanged",
+      "test_admin_valid_money_stock_boundaries_and_escaped_product_text",
+      "test_ajax_login_guard_and_cart_fragment_contract",
+      "test_all_public_and_customer_get_routes_and_local_references",
+      "test_cart_reference_prevents_admin_delete",
+      "test_checkout_rollback_after_mid_transaction_database_error",
+      "test_duplicate_email_and_password_boundaries",
+      "test_error_paths_are_generic_and_oversize_forms_are_rejected",
+      "test_expired_csrf_is_generic_and_does_not_mutate",
+      "test_history_price_snapshots_survive_edit_and_multi_item_checkout",
+      "test_invalid_sessions_and_database_role_changes_remove_access",
+      "test_login_rotates_csrf_and_logout_clears_authentication",
+      "test_login_throttle_expires_and_success_clears_failures",
+      "test_replay_rejects_external_targets_and_redirects_without_network",
+      "test_seed_invariants_and_idempotent_reset",
+      "test_template_compilation_python_syntax_and_fixed_loopback_entrypoint"
+    ],
+    "details": {
+      "seed": {
+        "counts": {
+          "users": 3,
+          "products": 12,
+          "cart_items": 0,
+          "orders": 6,
+          "order_items": 6
+        },
+        "customerAOrderIds": [
+          1,
+          2,
+          3
+        ],
+        "customerBOrderIds": [
+          4,
+          5,
+          6
+        ],
+        "categories": 4,
+        "foreignKeyCheck": "empty",
+        "integrityCheck": "ok",
+        "passwordRehashesOnReset": true,
+        "applicationDataDeterministicOnReset": true
+      },
+      "compile": {
+        "templates": 18,
+        "pythonFiles": 14,
+        "entrypoint": {
+          "host": "127.0.0.1",
+          "port": 8080,
+          "debug": false,
+          "use_reloader": false,
+          "threaded": false
+        }
+      }
+    },
+    "isolatedDatabases": true,
+    "actualNetworkConnections": 0
+  },
+  "runnerHistory": {
+    "initialRun": "focused-controls.initial-harness-failure.log",
+    "initialExitCode": 1,
+    "classification": "Harness configuration error, not an application failure. Timedelta is unsupported by Flask-WTF 1.3.0 CSRF_TIME_LIMIT. Final run leaves the app normal 3600-second configuration intact and signs one CSRF token with a backdated timestamp to exercise actual expiry."
+  },
+  "boundary": "Ephemeral helper executes through stdin. Every case resets a TemporaryDirectory seed, uses app.test_client only, keeps real CSRF enabled and explicit signing keys. No live HTTP, no original database access, no app or tests edits. No new deliberate-weakness comparisons; root replay owns those."
+}

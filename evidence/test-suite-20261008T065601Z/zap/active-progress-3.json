@@ -1,0 +1,163 @@
+{
+  "scanProgress": [
+    "http://127.0.0.1:8080",
+    {
+      "HostProcess": [
+        {
+          "Plugin": [
+            "Path Traversal",
+            "6",
+            "release",
+            "Complete",
+            "3",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            "Source Code Disclosure - /WEB-INF Folder",
+            "10045",
+            "release",
+            "Complete",
+            "41",
+            "6",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            "External Redirect",
+            "20019",
+            "release",
+            "Complete",
+            "41",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            "Cross Site Scripting (Reflected)",
+            "40012",
+            "release",
+            "Complete",
+            "5",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            "SQL Injection",
+            "40018",
+            "release",
+            "Complete",
+            "2",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            "Directory Browsing",
+            "0",
+            "release",
+            "Complete",
+            "8",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            "CRLF Injection",
+            "40003",
+            "release",
+            "Complete",
+            "5",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            "Parameter Tampering",
+            "40008",
+            "release",
+            "Complete",
+            "2",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            "ELMAH Information Leak",
+            "40028",
+            "release",
+            "Complete",
+            "8",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            "Trace.axd Information Leak",
+            "40029",
+            "release",
+            "Complete",
+            "9",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            ".htaccess Information Leak",
+            "40032",
+            "release",
+            "Complete",
+            "8",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            ".env Information Leak",
+            "40034",
+            "release",
+            "Complete",
+            "7",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            "Spring Actuator Information Leak",
+            "40042",
+            "release",
+            "Complete",
+            "25",
+            "2",
+            "0"
+          ]
+        },
+        {
+          "Plugin": [
+            "Hidden File Finder",
+            "40035",
+            "release",
+            "Complete",
+            "210",
+            "52",
+            "0"
+          ]
+        }
+      ]
+    }
+  ]
+}

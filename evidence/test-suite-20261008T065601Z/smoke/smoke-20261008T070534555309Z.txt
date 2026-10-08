@@ -1,0 +1,8 @@
+SecureShop smoke | http://127.0.0.1:8080 | 2026-10-08T12:35:34+05:30 Asia/Kolkata
+Source commit=a564617796a857dd482e8fe6daa7244d92ef484b; working_tree=clean
+Functional test changes local synthetic data. Stop the server and reset before a scan.
+PASS register → login
+PASS search → product → add → cart → remove → add
+PASS checkout → own order → history → profile → logout
+PASS admin login → create → edit → delete → user list → logout
+PASS complete normal demo journey; reset restores the original synthetic seed state.

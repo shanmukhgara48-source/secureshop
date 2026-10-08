@@ -119,10 +119,25 @@ smoke helpers still default to writing timestamped logs in `evidence/baseline/`;
 when collecting quality-branch evidence, preserve the original files and copy
 the new run's logs into `evidence/ui-quality/`.
 
-No ZAP installation/run, automated security scan, or external-target testing is
-included. Missing HTTPS-only cookie attributes and additional security headers
-may create later lab alerts; investigate and classify them rather than claiming
-zero alerts.
+## Completed local assessment - 8 October 2026
+
+The separately authorized local test suite and ZAP baseline scan are complete for
+application commit `a564617796a857dd482e8fe6daa7244d92ef484b`. Read the
+[full Markdown report](docs/complete-test-report.md) or the
+[PDF report](output/pdf/SecureShop_Test_Report.pdf).
+
+The assessment passed 34 regression checks, three independently seeded smoke
+journeys, and 24 browser functional checks. It examined 75 responsive states.
+ZAP 2.17.0 completed role-aware crawling and bounded GET scans against loopback
+only: 10 alert types, 270 instances, with classifications and coverage limits in
+the report. One moderate accessibility naming issue and incomplete contrast
+checks remain documented for review.
+
+Current assessment evidence is in `evidence/test-suite-20261008T065601Z/`.
+The original database, source and vulnerable tag were preserved. The app remains
+intentionally vulnerable; no fixes, remediation retest or external-target scan
+was performed. Private ZAP sessions stay in ignored `.instance/` because they
+contain authentication material; the shared alert exports are sanitized.
 
 ## Development checks
 

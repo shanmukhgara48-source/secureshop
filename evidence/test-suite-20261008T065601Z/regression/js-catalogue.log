@@ -1,0 +1,9 @@
+COMMAND ["/Users/shanmukhsai/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node", "--check", "static/js/catalogue.js"]
+CWD /Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop
+START 2026-10-08T06:58:35.868029+00:00
+END 2026-10-08T06:58:35.937345+00:00
+EXIT 0
+
+STDOUT
+
+STDERR

@@ -1,0 +1,11 @@
+COMMAND ["shasum", "-a", "256", "-c", "SHA256SUMS"]
+CWD /Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop/static/vendor/jquery
+START 2026-10-08T06:58:35.833562+00:00
+END 2026-10-08T06:58:35.867672+00:00
+EXIT 0
+
+STDOUT
+jquery-3.4.1.min.js: OK
+jquery-4.0.0.min.js: OK
+
+STDERR

@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-08T07:10:37.407485+00:00",
+  "contextId": 3,
+  "installedZapVersion": "2.17.0",
+  "authenticationMethod": "formBasedAuthentication",
+  "loginUrl": "http://127.0.0.1:8080/login",
+  "loginPageUrl": "http://127.0.0.1:8080/login",
+  "loginRequestFieldNames": [
+    "csrf_token",
+    "password",
+    "username"
+  ],
+  "usernamePlaceholderCorrect": true,
+  "passwordPlaceholderCorrect": true,
+  "csrfFieldHasNonemptyUniquePlaceholder": true,
+  "loggedInIndicator": "data-authenticated=\"true\"",
+  "loggedOutIndicator": "data-authenticated=\"false\"",
+  "sessionMethod": "cookieBasedSessionManagement",
+  "csrfTokenNameRecognized": true,
+  "usersEnabled": [
+    {
+      "id": "80",
+      "name": "customer_a",
+      "enabled": "true"
+    },
+    {
+      "id": "81",
+      "name": "customer_b",
+      "enabled": "true"
+    },
+    {
+      "id": "82",
+      "name": "admin",
+      "enabled": "true"
+    }
+  ],
+  "scope": "Read-only API metadata. Values for credentials, cookies, API keys and CSRF tokens omitted."
+}

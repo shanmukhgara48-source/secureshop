@@ -1,0 +1,9 @@
+COMMAND ["/Users/shanmukhsai/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node", "--check", "static/js/site.js"]
+CWD /Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop
+START 2026-10-08T06:58:35.833646+00:00
+END 2026-10-08T06:58:35.937485+00:00
+EXIT 0
+
+STDOUT
+
+STDERR

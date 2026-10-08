@@ -1,0 +1,11 @@
+COMMAND ["git", "clone", "--no-hardlinks", "--no-checkout", "/Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop", "/Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop/.instance/full-suite/fresh-clone"]
+CWD /Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop
+START 2026-10-08T07:02:43.151387+00:00
+END 2026-10-08T07:02:43.322340+00:00
+EXIT 0
+
+STDOUT
+
+STDERR
+Cloning into '/Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop/.instance/full-suite/fresh-clone'...
+done.

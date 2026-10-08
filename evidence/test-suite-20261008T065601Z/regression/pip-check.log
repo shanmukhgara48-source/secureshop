@@ -1,0 +1,10 @@
+COMMAND ["/Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop/.venv/bin/python", "-m", "pip", "check"]
+CWD /Users/shanmukhsai/Desktop/RED TEAM _ APPLICATION SECURITY/secureshop
+START 2026-10-08T06:58:35.765221+00:00
+END 2026-10-08T06:58:36.025252+00:00
+EXIT 0
+
+STDOUT
+No broken requirements found.
+
+STDERR

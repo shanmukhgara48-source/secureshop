@@ -1,0 +1,82 @@
+[
+  {
+    "pluginId": "40018",
+    "name": "SQL Injection",
+    "risk": "High",
+    "instances": 1,
+    "classification": "confirmed",
+    "rationale": "The search q parameter is interpolated into SQL. Independent bounded replay returned 1 normal, 12 true-comparison, and 0 false-comparison results. ZAP detected it with Medium confidence after increasing the general SQL rule to HIGH. No writes, credential extraction, or code execution were demonstrated."
+  },
+  {
+    "pluginId": "10020",
+    "name": "Missing Anti-clickjacking Header",
+    "risk": "Medium",
+    "instances": 43,
+    "classification": "confirmed",
+    "rationale": "HTML responses omit CSP frame-ancestors and X-Frame-Options. Replay confirmed absent headers; a separate loopback fixture successfully embedded the catalogue. This confirms the intentional A05 framing condition, not a completed clickjacking attack."
+  },
+  {
+    "pluginId": "10038",
+    "name": "Content Security Policy (CSP) Header Not Set",
+    "risk": "Medium",
+    "instances": 53,
+    "classification": "confirmed",
+    "rationale": "The CSP header is absent on HTML and error responses, consistent with the deliberately omitted-header configuration. This overlaps the A05 framing finding and records a broader hardening omission; absent CSP alone does not establish XSS."
+  },
+  {
+    "pluginId": "10003",
+    "name": "Vulnerable JS Library",
+    "risk": "Medium",
+    "instances": 1,
+    "classification": "confirmed",
+    "rationale": "The catalogue loads local jQuery 3.4.1, an affected component covered by CVE-2020-11022, patched in 3.5.0. Category filtering and AJAX cart updates exercise the library. Untrusted HTML reaching affected DOM methods and browser exploitation were not demonstrated."
+  },
+  {
+    "pluginId": "10036",
+    "name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+    "risk": "Low",
+    "instances": 71,
+    "classification": "confirmed",
+    "rationale": "The local Werkzeug development server returns a Server banner identifying Werkzeug 3.1.9 and Python 3.14.3. This is an additional environment fingerprinting observation, not a demonstrated vulnerable-server exploit."
+  },
+  {
+    "pluginId": "10021",
+    "name": "X-Content-Type-Options Header Missing",
+    "risk": "Low",
+    "instances": 60,
+    "classification": "confirmed",
+    "rationale": "The nosniff header is absent on HTML and local assets, within the deliberately omitted-header configuration. This is an additional header-hardening observation; MIME confusion exploitation was not demonstrated."
+  },
+  {
+    "pluginId": "10031",
+    "name": "User Controllable HTML Element Attribute (Potential XSS)",
+    "risk": "Informational",
+    "instances": 9,
+    "classification": "unresolved",
+    "rationale": "Low-confidence reflection hotspots comprise eight category records and one search record. Source review finds category selection restricted to existing options and search text autoescaped in a quoted input value. No executable sink or context-break reproduction was established. Retain as an unresolved hotspot with benign reviewed reflection; do not count as confirmed XSS or claim all possible XSS ruled out."
+  },
+  {
+    "pluginId": "10112",
+    "name": "Session Management Response Identified",
+    "risk": "Informational",
+    "instances": 26,
+    "classification": "confirmed",
+    "rationale": "The scanner identified the application's intended session cookie. This is confirmed informational session metadata, not a vulnerability or proof of session compromise. Cookie flags, authentication transitions, and CSRF were checked separately."
+  },
+  {
+    "pluginId": "10111",
+    "name": "Authentication Request Identified",
+    "risk": "Informational",
+    "instances": 5,
+    "classification": "confirmed",
+    "rationale": "The scanner recognized normal local login requests used for the authorized assessment. This is confirmed informational authentication metadata, not a vulnerability. Private sessions and appropriate customer/admin responses were independently verified."
+  },
+  {
+    "pluginId": "10027",
+    "name": "Information Disclosure - Suspicious Comments",
+    "risk": "Informational",
+    "instances": 1,
+    "classification": "false_positive",
+    "rationale": "The match is the public jQuery implementation keyword username in its XHR configuration, rather than an application credential or private comment. It is a false positive as sensitive disclosure. The outdated-library finding is recorded separately."
+  }
+]
