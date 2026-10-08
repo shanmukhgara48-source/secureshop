@@ -5,7 +5,7 @@ import http.client
 import subprocess
 import sys
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from html.parser import HTMLParser
 from http.cookies import SimpleCookie
 from pathlib import Path
@@ -78,15 +78,20 @@ class LocalClient:
         for _ in range(6):
             path = self.local_path(path)
             body = urlencode(data).encode("ascii") if data is not None else None
-            headers = {"Cookie": "; ".join(f"{name}={value}" for name, value in self.cookies.items())}
+            headers = {
+                "Cookie": "; ".join(f"{name}={value}" for name, value in self.cookies.items())
+            }
             if body is not None:
                 headers["Content-Type"] = "application/x-www-form-urlencoded"
             connection = http.client.HTTPConnection("127.0.0.1", 8080, timeout=10)
             try:
                 connection.request(method, path, body=body, headers=headers)
                 response = connection.getresponse()
-                result = Response(response.status, response.read().decode("utf-8"),
-                                  {name.lower(): value for name, value in response.getheaders()})
+                result = Response(
+                    response.status,
+                    response.read().decode("utf-8"),
+                    {name.lower(): value for name, value in response.getheaders()},
+                )
                 for header in response.headers.get_all("Set-Cookie", []):
                     for name, cookie in SimpleCookie(header).items():
                         if cookie["max-age"] == "0":
@@ -123,7 +128,7 @@ class LocalClient:
 def save_evidence(name, lines):
     directory = ROOT / "evidence" / "baseline"
     directory.mkdir(parents=True, exist_ok=True)
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+    stamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%S%fZ")
     path = directory / f"{name}-{stamp}.txt"
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return path
@@ -139,10 +144,12 @@ def run_with_log(name, operation, target=TARGET):
     stamp = datetime.now(ZoneInfo("Asia/Kolkata")).isoformat(timespec="seconds")
     emit(f"SecureShop {name} | {TARGET} | {stamp} Asia/Kolkata")
     try:
-        revision = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, check=True,
-                                  capture_output=True, text=True).stdout.strip()
-        dirty = subprocess.run(["git", "status", "--porcelain"], cwd=ROOT, check=True,
-                               capture_output=True, text=True).stdout.strip()
+        revision = subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True
+        ).stdout.strip()
+        dirty = subprocess.run(
+            ["git", "status", "--porcelain"], cwd=ROOT, check=True, capture_output=True, text=True
+        ).stdout.strip()
         emit(f"Source commit={revision}; working_tree={'modified' if dirty else 'clean'}")
     except (OSError, subprocess.CalledProcessError):
         emit("Source commit unavailable (not a Git checkout).")
@@ -161,9 +168,14 @@ def replay(client, emit):
     client.login("customer_a", "CustomerA!2026")
     foreign = client.get("/orders/4")
     returned = foreign.page().marker("data-order-owner") == "customer_b"
-    emit(f"A01 /orders/4: HTTP {foreign.status}; foreign_order_data_returned={str(returned).lower()}")
-    queries = (("normal", "notebook"), ("true", "notebook%' OR '1'='1' -- "),
-               ("false", "notebook%' AND '1'='2' -- "))
+    emit(
+        f"A01 /orders/4: HTTP {foreign.status}; foreign_order_data_returned={str(returned).lower()}"
+    )
+    queries = (
+        ("normal", "notebook"),
+        ("true", "notebook%' OR '1'='1' -- "),
+        ("false", "notebook%' AND '1'='2' -- "),
+    )
     counts = {}
     for label, query in queries:
         result = client.get("/search?" + urlencode({"q": query}))
@@ -173,17 +185,27 @@ def replay(client, emit):
     emit(f"A03 boolean_pair_counts_differ={str(counts['true'] != counts['false']).lower()}")
     for path in ("/", "/products"):
         result = client.get(path)
-        emit(f"A05 {path}: HTTP {result.status}; X-Frame-Options={result.headers.get('x-frame-options', '(absent)')}; "
-             f"Content-Security-Policy={result.headers.get('content-security-policy', '(absent)')}")
+        emit(
+            f"A05 {path}: HTTP {result.status}; X-Frame-Options={result.headers.get('x-frame-options', '(absent)')}; "
+            f"Content-Security-Policy={result.headers.get('content-security-policy', '(absent)')}"
+        )
     catalogue = client.get("/products")
-    jquery = [path for path in catalogue.page().scripts if path.startswith("/static/vendor/jquery/jquery-")]
+    jquery = [
+        path
+        for path in catalogue.page().scripts
+        if path.startswith("/static/vendor/jquery/jquery-")
+    ]
     emit(f"A06 catalogue jQuery reference: {', '.join(jquery) if jquery else '(not found)'}")
-    emit("A06 observation records the loaded library; browser exploitation was not tested or claimed.")
+    emit(
+        "A06 observation records the loaded library; browser exploitation was not tested or claimed."
+    )
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--target", default=TARGET, help="Must equal http://127.0.0.1:8080 exactly.")
+    parser.add_argument(
+        "--target", default=TARGET, help="Must equal http://127.0.0.1:8080 exactly."
+    )
     args = parser.parse_args()
     if args.target != TARGET:
         parser.error(f"Only {TARGET} is permitted.")

@@ -1,29 +1,31 @@
 {% extends 'base.html' %}
+{% from '_macros.html' import icon, admin_sidebar %}
 {% block title %}Local users{% endblock %}
 {% block content %}
-<header class="page-heading">
-  <p class="eyebrow">ADMINISTRATOR / LOCAL ACCOUNTS</p>
-  <h1>The lab's people.</h1>
-  <p>A read-only list of synthetic accounts. Passwords and password hashes are never included.</p>
-</header>
-{% if users %}
-<div class="table-wrap">
-  <table class="data-table">
-    <thead><tr><th>ID</th><th>Username</th><th>Synthetic email</th><th>Role</th><th>Created</th></tr></thead>
-    <tbody>
-      {% for user in users %}
-      <tr data-user-id="{{ user['id'] }}">
-        <td>#{{ user['id'] }}</td>
-        <td>{{ user['username'] }}</td>
-        <td>{{ user['email'] }}</td>
-        <td><span class="badge">{{ user['role'] }}</span></td>
-        <td>{{ user['created_at'] }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-{% else %}
-<section class="empty-state"><h2>No accounts to show.</h2><p>Reset the seed database to restore the synthetic demo accounts.</p></section>
-{% endif %}
+  <div class="admin-layout">
+    {{ admin_sidebar('users') }}
+    <div class="admin-content">
+      <header class="page-heading">
+        <p class="eyebrow">SHOP DESK / ACCOUNTS</p><h1>The shop's<br><em>people.</em></h1><p>A read-only view of the local demo accounts.</p>
+      </header>
+      <div class="admin-stat-grid">
+        <div><span>Accounts</span><strong>{{ users|length }}</strong>{{ icon('user') }}</div>
+        <div><span>Customers</span><strong>{{ users|selectattr('role', 'equalto', 'customer')|list|length }}</strong>{{ icon('bag') }}</div>
+        <div><span>Administrators</span><strong>{{ users|selectattr('role', 'equalto', 'admin')|list|length }}</strong>{{ icon('grid') }}</div>
+      </div>
+      <div class="list-heading"><h2>Local accounts</h2><span>{{ users|length }} users</span></div>
+      {% if users %}
+        <section class="user-grid" aria-label="Local user accounts">
+          {% for user in users %}
+            <article class="user-card" data-user-id="{{ user['id'] }}">
+              <div class="user-card-heading"><span class="profile-avatar" aria-hidden="true">{{ user['username'][0]|upper }}</span><div><h2>{{ user['username'] }}</h2><span class="badge {% if user['role'] == 'admin' %}badge-admin{% endif %}">{{ user['role']|capitalize }}</span></div><span class="user-id">#{{ user['id'] }}</span></div>
+              <dl class="user-card-details"><div><dt>Synthetic email</dt><dd>{{ user['email'] }}</dd></div><div><dt>Joined</dt><dd>{{ user['created_at']|shop_date }}</dd></div></dl>
+            </article>
+          {% endfor %}
+        </section>
+      {% else %}
+        <section class="empty-state"><div class="empty-illustration">{{ icon('user') }}</div><h2>No accounts to show.</h2><p>The local account list is currently empty.</p></section>
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}

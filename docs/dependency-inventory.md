@@ -58,6 +58,28 @@ exhaustive vulnerability assessment or future latest-version status.
 No ORM, frontend framework, CDN runtime reference, payment library, or external
 service client is required. `tools/replay.py` uses Python's standard library.
 
+## Optional development tooling
+
+`requirements-dev.txt` includes the runtime requirements and pins the following
+local development tool. It is not imported by the application or served to the
+browser.
+
+| Component | Pinned version | Purpose | Latest/advisory status |
+|---|---|---|---|
+| Ruff | 0.16.10 | Python linting and formatting checks configured in `pyproject.toml` | Version pinned for reproducibility; newest release and advisory status are not claimed by this inventory. |
+
+Install it with `pip install -r requirements-dev.txt`. The regression suite uses
+standard-library `unittest`, and JavaScript syntax checks can use an available
+Node.js executable. Neither adds a runtime network service. Node.js is optional
+and is not pinned or required by SecureShop.
+
+The `codex/ui-code-quality` branch also adds **17 project-authored local SVG
+assets**: 12 seeded-product illustrations, four category fallbacks, and one
+hero illustration. These are project assets, not downloaded JavaScript
+libraries or an added frontend framework. System fonts are used locally.
+The affected jQuery 3.4.1 reference and the unused local 4.0.0 build remain as
+recorded above.
+
 ## Runtime and local data
 
 | Component | Observed version | Notes |

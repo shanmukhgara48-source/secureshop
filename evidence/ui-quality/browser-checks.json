@@ -1,0 +1,686 @@
+{
+  "testedAt": "2026-10-08T06:25:21.463Z",
+  "sourceState": "codex/ui-code-quality working tree before commit",
+  "database": "isolated temporary seeded database; original shop.db unchanged",
+  "pages": [
+    {
+      "path": "/",
+      "label": "public",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/login",
+      "label": "public",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/register",
+      "label": "public",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/products",
+      "label": "public",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/products/1",
+      "label": "public",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/login",
+      "label": "public",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/",
+      "label": "public",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/login",
+      "label": "public",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/register",
+      "label": "public",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/products",
+      "label": "public",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/products/1",
+      "label": "public",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/login",
+      "label": "public",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/",
+      "label": "public",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/login",
+      "label": "public",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/register",
+      "label": "public",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/products",
+      "label": "public",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/products/1",
+      "label": "public",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/login",
+      "label": "public",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/",
+      "label": "public",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/login",
+      "label": "public",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/register",
+      "label": "public",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/products",
+      "label": "public",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/products/1",
+      "label": "public",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/login",
+      "label": "public",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/",
+      "label": "public",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/login",
+      "label": "public",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/register",
+      "label": "public",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/products",
+      "label": "public",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/products/1",
+      "label": "public",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/login",
+      "label": "public",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/",
+      "label": "home",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/login",
+      "label": "login",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/login",
+      "label": "mobilelogin",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/cart",
+      "label": "customer",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/orders",
+      "label": "customer",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/orders/1",
+      "label": "customer",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/profile",
+      "label": "customer",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/cart",
+      "label": "customer",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/orders",
+      "label": "customer",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/orders/1",
+      "label": "customer",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/profile",
+      "label": "customer",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/cart",
+      "label": "customer",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/orders",
+      "label": "customer",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/orders/1",
+      "label": "customer",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/profile",
+      "label": "customer",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/cart",
+      "label": "customer",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/orders",
+      "label": "customer",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/orders/1",
+      "label": "customer",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/profile",
+      "label": "customer",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/cart",
+      "label": "customer",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/orders",
+      "label": "customer",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/orders/1",
+      "label": "customer",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/profile",
+      "label": "customer",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/cart",
+      "label": "cart",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products",
+      "label": "admin",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/users",
+      "label": "admin",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products/new",
+      "label": "admin",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products/1/edit",
+      "label": "admin",
+      "width": 320,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products",
+      "label": "admin",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/users",
+      "label": "admin",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products/new",
+      "label": "admin",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products/1/edit",
+      "label": "admin",
+      "width": 375,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products",
+      "label": "admin",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/users",
+      "label": "admin",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products/new",
+      "label": "admin",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products/1/edit",
+      "label": "admin",
+      "width": 768,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products",
+      "label": "admin",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/users",
+      "label": "admin",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products/new",
+      "label": "admin",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products/1/edit",
+      "label": "admin",
+      "width": 1024,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products",
+      "label": "admin",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/users",
+      "label": "admin",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products/new",
+      "label": "admin",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    },
+    {
+      "path": "/admin/products/1/edit",
+      "label": "admin",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "unprotectedPostForms": 0,
+      "brokenImages": []
+    }
+  ],
+  "checks": {
+    "passwordToggle": true,
+    "mobileMenuKeyboard": true,
+    "collectionDeepLink": true,
+    "jqueryVersion": "3.4.1",
+    "liveFilterCards": 3,
+    "ajaxCart": true,
+    "filterEmptyState": true,
+    "browserCheckout": true,
+    "adminBrowserCRUD": true
+  },
+  "consoleOrPageErrors": [],
+  "externalRequests": []
+}

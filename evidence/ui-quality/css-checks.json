@@ -1,0 +1,271 @@
+{
+  "testedAtUTC": "2026-10-08T06:24:56.422642+00:00",
+  "sourceState": "UI-quality working tree before commit",
+  "sourceBaseCommit": "d347eb7c2404001fae0a2f43706be6e682afc7d4",
+  "cssSHA256": "7db91c5332a6f9a5585e4bee9d239a464798e48ee04f1aa87a0c9b38928501ed",
+  "target": "http://127.0.0.1:8080",
+  "environment": "Fresh app process using an isolated synthetic temporary seed database",
+  "operations": "Public GET requests only; no login, form submission, database mutation, or scanning",
+  "browser": "Headless Chromium through bundled Playwright",
+  "externalRequests": "Blocked in viewport checks",
+  "routesTested": [
+    "/login",
+    "/",
+    "/products",
+    "/products/1",
+    "/register",
+    "/admin/login"
+  ],
+  "viewportWidths": [
+    320,
+    375,
+    768,
+    1024,
+    1440
+  ],
+  "viewportSummary": {
+    "checks": 30,
+    "http200": true,
+    "horizontalOverflow": false
+  },
+  "viewportChecks": [
+    {
+      "path": "/login",
+      "status": 200,
+      "width": 320,
+      "scrollWidth": 320,
+      "bodyWidth": 320
+    },
+    {
+      "path": "/login",
+      "status": 200,
+      "width": 375,
+      "scrollWidth": 375,
+      "bodyWidth": 375
+    },
+    {
+      "path": "/login",
+      "status": 200,
+      "width": 768,
+      "scrollWidth": 768,
+      "bodyWidth": 768
+    },
+    {
+      "path": "/login",
+      "status": 200,
+      "width": 1024,
+      "scrollWidth": 1024,
+      "bodyWidth": 1024
+    },
+    {
+      "path": "/login",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "width": 320,
+      "scrollWidth": 320,
+      "bodyWidth": 320
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "width": 375,
+      "scrollWidth": 375,
+      "bodyWidth": 375
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "width": 768,
+      "scrollWidth": 768,
+      "bodyWidth": 768
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "width": 1024,
+      "scrollWidth": 1024,
+      "bodyWidth": 1024
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440
+    },
+    {
+      "path": "/products",
+      "status": 200,
+      "width": 320,
+      "scrollWidth": 320,
+      "bodyWidth": 320
+    },
+    {
+      "path": "/products",
+      "status": 200,
+      "width": 375,
+      "scrollWidth": 375,
+      "bodyWidth": 375
+    },
+    {
+      "path": "/products",
+      "status": 200,
+      "width": 768,
+      "scrollWidth": 768,
+      "bodyWidth": 768
+    },
+    {
+      "path": "/products",
+      "status": 200,
+      "width": 1024,
+      "scrollWidth": 1024,
+      "bodyWidth": 1024
+    },
+    {
+      "path": "/products",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440
+    },
+    {
+      "path": "/products/1",
+      "status": 200,
+      "width": 320,
+      "scrollWidth": 320,
+      "bodyWidth": 320
+    },
+    {
+      "path": "/products/1",
+      "status": 200,
+      "width": 375,
+      "scrollWidth": 375,
+      "bodyWidth": 375
+    },
+    {
+      "path": "/products/1",
+      "status": 200,
+      "width": 768,
+      "scrollWidth": 768,
+      "bodyWidth": 768
+    },
+    {
+      "path": "/products/1",
+      "status": 200,
+      "width": 1024,
+      "scrollWidth": 1024,
+      "bodyWidth": 1024
+    },
+    {
+      "path": "/products/1",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440
+    },
+    {
+      "path": "/register",
+      "status": 200,
+      "width": 320,
+      "scrollWidth": 320,
+      "bodyWidth": 320
+    },
+    {
+      "path": "/register",
+      "status": 200,
+      "width": 375,
+      "scrollWidth": 375,
+      "bodyWidth": 375
+    },
+    {
+      "path": "/register",
+      "status": 200,
+      "width": 768,
+      "scrollWidth": 768,
+      "bodyWidth": 768
+    },
+    {
+      "path": "/register",
+      "status": 200,
+      "width": 1024,
+      "scrollWidth": 1024,
+      "bodyWidth": 1024
+    },
+    {
+      "path": "/register",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440
+    },
+    {
+      "path": "/admin/login",
+      "status": 200,
+      "width": 320,
+      "scrollWidth": 320,
+      "bodyWidth": 320
+    },
+    {
+      "path": "/admin/login",
+      "status": 200,
+      "width": 375,
+      "scrollWidth": 375,
+      "bodyWidth": 375
+    },
+    {
+      "path": "/admin/login",
+      "status": 200,
+      "width": 768,
+      "scrollWidth": 768,
+      "bodyWidth": 768
+    },
+    {
+      "path": "/admin/login",
+      "status": 200,
+      "width": 1024,
+      "scrollWidth": 1024,
+      "bodyWidth": 1024
+    },
+    {
+      "path": "/admin/login",
+      "status": 200,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440
+    }
+  ],
+  "contrastScope": "Visible HTML direct text nodes and input placeholders on the six public routes, using computed foreground and nearest solid background; threshold 4.5:1 or 3:1 for text at least 24px. This focused check is not a complete accessibility audit.",
+  "contrastChecks": [
+    {
+      "path": "/",
+      "findings": []
+    },
+    {
+      "path": "/login",
+      "findings": []
+    },
+    {
+      "path": "/products",
+      "findings": []
+    },
+    {
+      "path": "/products/1",
+      "findings": []
+    },
+    {
+      "path": "/register",
+      "findings": []
+    },
+    {
+      "path": "/admin/login",
+      "findings": []
+    }
+  ],
+  "visualReview": "Login desktop and mobile, plus home desktop, inspected visually after responsive and touch-area changes"
+}

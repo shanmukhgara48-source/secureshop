@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-08T06:41:41.674225+00:00",
+  "launch": "python app.py",
+  "bind": "127.0.0.1:8080",
+  "debug": false,
+  "originalDatabasePreserved": true,
+  "verification": "SHA256 matched before/after isolated browser, replay, smoke, and unit tests",
+  "privateQaDatabaseRemoved": true,
+  "publicResponses": {
+    "/": 200,
+    "/login": 200,
+    "/products": 200
+  },
+  "latestNaturalLinkMarkup": true,
+  "activeJquery": "3.4.1"
+}

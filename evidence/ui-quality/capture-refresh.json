@@ -1,0 +1,124 @@
+{
+  "testedAt": "2026-10-08T06:32:23.196Z",
+  "sourceState": "UI/code-quality working tree after contrast/landmark corrections and server restart. Subsequent natural-link-name refinement changed visually hidden context and ARIA only, leaving these visible captures unchanged; that refinement is checked in accessibility-checks.json.",
+  "database": "isolated copied QA database; GET pages and normal logins only in this refresh",
+  "cssSha256": "fe0ac9471d07bca575e429e1282a65eb4d66694b279175773d6a1ad56975f3cb",
+  "captures": [
+    {
+      "path": "/",
+      "width": 1440,
+      "name": "home-desktop",
+      "status": 200,
+      "overflow": false,
+      "brandLabel": "SecureShop. home",
+      "labLandmark": "region"
+    },
+    {
+      "path": "/login",
+      "width": 1440,
+      "name": "login-desktop",
+      "status": 200,
+      "overflow": false,
+      "brandLabel": "SecureShop. home",
+      "labLandmark": "region"
+    },
+    {
+      "path": "/login",
+      "width": 375,
+      "name": "login-mobile",
+      "status": 200,
+      "overflow": false,
+      "brandLabel": "SecureShop. home",
+      "labLandmark": "region"
+    },
+    {
+      "path": "/products",
+      "width": 1440,
+      "name": "catalogue-desktop",
+      "status": 200,
+      "overflow": false,
+      "brandLabel": "SecureShop. home",
+      "labLandmark": "region",
+      "captureTime": "2026-10-08T06:33:18.979Z",
+      "loadedImages": 12,
+      "note": "Lazy-loaded images forced eager in capture browser only, so the full-page artifact includes every product illustration."
+    },
+    {
+      "path": "/products",
+      "width": 375,
+      "name": "catalogue-mobile",
+      "status": 200,
+      "overflow": false,
+      "brandLabel": "SecureShop. home",
+      "labLandmark": "region",
+      "captureTime": "2026-10-08T06:33:19.622Z",
+      "loadedImages": 12,
+      "note": "Lazy-loaded images forced eager in capture browser only, so the full-page artifact includes every product illustration."
+    },
+    {
+      "path": "/cart",
+      "width": 375,
+      "name": "cart-empty-mobile",
+      "status": 200,
+      "overflow": false,
+      "brandLabel": "SecureShop. home",
+      "labLandmark": "region"
+    },
+    {
+      "path": "/cart",
+      "width": 1440,
+      "name": "cart-desktop",
+      "status": 200,
+      "overflow": false,
+      "brandLabel": "SecureShop. home",
+      "labLandmark": "region"
+    },
+    {
+      "path": "/orders/1",
+      "width": 1440,
+      "name": "order-desktop",
+      "status": 200,
+      "overflow": false,
+      "brandLabel": "SecureShop. home",
+      "labLandmark": "region"
+    },
+    {
+      "path": "/profile",
+      "width": 1440,
+      "name": "profile-desktop",
+      "status": 200,
+      "overflow": false,
+      "brandLabel": "SecureShop. home",
+      "labLandmark": "region"
+    },
+    {
+      "path": "/admin/products",
+      "width": 1440,
+      "name": "admin-products-desktop",
+      "status": 200,
+      "overflow": false,
+      "brandLabel": "SecureShop. home",
+      "labLandmark": "region"
+    },
+    {
+      "path": "/admin/products",
+      "width": 375,
+      "name": "admin-products-mobile",
+      "status": 200,
+      "overflow": false,
+      "brandLabel": "SecureShop. home",
+      "labLandmark": "region"
+    },
+    {
+      "path": "/admin/users",
+      "width": 1440,
+      "name": "admin-users-desktop",
+      "status": 200,
+      "overflow": false,
+      "brandLabel": "SecureShop. home",
+      "labLandmark": "region"
+    }
+  ],
+  "consoleOrPageErrors": [],
+  "externalRequests": []
+}

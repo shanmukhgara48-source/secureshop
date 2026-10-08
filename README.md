@@ -15,7 +15,7 @@ python app.py
 ```
 
 Open http://127.0.0.1:8080. Direct execution always uses that address and port with debug and reload off.
-No external services or external runtime assets are used.
+No external services or external runtime assets are used. Product illustrations, CSS, scripts, and fonts use local assets or system defaults.
 
 Stop the server before resetting. `python seed.py` recreates the known synthetic state.
 Passwords are freshly hashed on each reset; record IDs and application data stay deterministic.
@@ -43,7 +43,7 @@ The `Secure` cookie attribute is disabled for this loopback HTTP lab; HttpOnly a
 - Catalogue category filtering and AJAX Add to cart use local **jQuery 3.4.1**. Without JavaScript, ordinary cart forms still work.
 - Product prices are entered in rupees, stored as integer paise, and used by the server to calculate checkout totals.
 - Referenced products cannot be deleted, preserving carts and historical order prices. Create an unused demo product to demonstrate deletion.
-- All mutation routes use POST and server-validated CSRF. The shared login throttle allows five failed attempts per minute; restart or wait a minute if it is reached during a manual demonstration.
+- All mutation routes use POST and server-validated CSRF. The shared login throttle allows five failed attempts per minute per client address, with state isolated to each application instance; restart or wait a minute if it is reached during a manual demonstration.
 
 ## Four controlled weaknesses
 
@@ -97,14 +97,63 @@ cd static/vendor/jquery
 shasum -a 256 -c SHA256SUMS
 ```
 
-## Checkpoint and evidence
+## Checkpoints and evidence
 
-The four build stages are committed separately on `codex/vulnerable-baseline`; the completed checkpoint is tagged **`vulnerable`**.
-Check the recorded source commit and working-tree status in validation logs when comparing results.
-Baseline evidence belongs in `evidence/baseline/`. `evidence/final/` contains only its placeholder at this gate.
-Recorded outcomes and their limits are in [the baseline validation summary](evidence/baseline/validation-summary.md).
-This project stops here: no fixes, ZAP installation/run, automated security scan, or external-target testing is included.
-The absence of HTTPS-only cookie attributes and additional security headers may create later lab alerts; investigate and classify them rather than claiming zero alerts.
+The original four-stage build remains tagged **`vulnerable`** at
+`d347eb7c2404001fae0a2f43706be6e682afc7d4` on `codex/vulnerable-baseline`.
+The tag and its original evidence are preserved.
+
+The current **`codex/ui-code-quality`** branch improves the storefront, shared
+code, and regression checks while retaining all four deliberate weaknesses.
+It does not implement remediation or run ZAP. The changes are described in
+[the UI and code quality notes](docs/ui-code-quality.md).
+
+- `evidence/baseline/`: original vulnerable-tag observations and browser captures.
+- `evidence/ui-quality/`: new observations and captures for the quality branch;
+  record the tested commit or working-tree state alongside results.
+- `evidence/final/`: reserved for later authorized remediation and retesting.
+
+[The baseline validation summary](evidence/baseline/validation-summary.md)
+describes the original build, not the redesigned storefront. The replay and
+smoke helpers still default to writing timestamped logs in `evidence/baseline/`;
+when collecting quality-branch evidence, preserve the original files and copy
+the new run's logs into `evidence/ui-quality/`.
+
+No ZAP installation/run, automated security scan, or external-target testing is
+included. Missing HTTPS-only cookie attributes and additional security headers
+may create later lab alerts; investigate and classify them rather than claiming
+zero alerts.
+
+## Development checks
+
+The runtime setup above is sufficient to use the app. Install the optional
+pinned development dependencies for Python linting and formatting checks:
+
+```sh
+pip install -r requirements-dev.txt
+python -m unittest discover -v
+ruff check .
+ruff format --check .
+```
+
+The automated tests use temporary databases, real server-side CSRF validation,
+and explicit test signing keys; they do not change the running lab's `shop.db`.
+They cover account roles, login behavior, CSRF, cart ownership, checkout totals
+and stock, admin operations, order-history filtering, and local configuration.
+They are regression checks, not a security scanner or a guarantee of no other
+flaws.
+
+With Node.js available, these optional checks parse the local scripts without
+executing them:
+
+```sh
+node --check static/js/site.js
+node --check static/js/catalogue.js
+```
+
+Node.js and Ruff are development tools, not application runtime services.
+Browser behavior and layout still require the normal customer/admin walkthrough.
+Record new checks in `evidence/ui-quality/` without replacing baseline evidence.
 
 ## Design shortcuts
 
@@ -112,3 +161,8 @@ Single-process local Flask server, raw SQLite, fixed seed data, four catalogue c
 There is no payment, shipping, email, cloud integration, frontend framework, or separate API service.
 The HTML returned to AJAX is parsed in an inert document; only text is inserted into the visible page.
 Application error pages are generic, templates are autoescaped, password hashes are never listed, and all other user-input SQL uses parameters.
+
+The quality branch adds 17 project-authored local SVG illustrations, shared
+Jinja macros, a mobile menu, password visibility controls, and a confirmation
+before product deletion. Collection links open the corresponding catalogue
+filter. Core forms remain ordinary server-rendered forms.

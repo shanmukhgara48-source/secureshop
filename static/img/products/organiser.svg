@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-labelledby="title"><title id="title">Sage desk organiser with stationery</title><defs>
+  <linearGradient id="forest" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#527365"/><stop offset="1" stop-color="#254a3e"/></linearGradient>
+  <linearGradient id="sage" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b7c7ae"/><stop offset="1" stop-color="#879f88"/></linearGradient>
+  <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffdf6"/><stop offset="1" stop-color="#e8ddca"/></linearGradient>
+  <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0e8d7"/><stop offset="1" stop-color="#d3c3a6"/></linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#afb9b2"/><stop offset=".4" stop-color="#e6eae3"/><stop offset="1" stop-color="#929e94"/></linearGradient>
+  <linearGradient id="ochre" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9bf77"/><stop offset="1" stop-color="#c89549"/></linearGradient>
+  <filter id="shadow" x="-50%" y="-100%" width="200%" height="300%"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<ellipse cx="204" cy="267" rx="115" ry="12" fill="#315348" opacity=".15" filter="url(#shadow)"/>
+<g transform="translate(2 -2)">
+ <path d="m97 119 178-17 36 24-178 22z" fill="#dae1d0"/>
+ <path d="m97 119 36 29v94l-36-28z" fill="#708d76"/>
+ <path d="m133 148 178-22v94l-178 22z" fill="url(#sage)"/>
+ <path d="m112 118 15 12 62-7-15-11z" fill="#3d5c4c"/>
+ <path d="m192 110 71-6 25 15-75 9z" fill="#5d7862"/>
+ <path d="m191 129 1 109" stroke="#d5dec9" stroke-width="3"/>
+ <path d="m143 165 35-4v56l-35 5z" fill="#a5b899" stroke="#708d76"/>
+ <path d="m211 154 80-9v22l-80 10z" fill="#749172"/>
+ <path d="m220 157 62-7v4l-62 7z" fill="#e5dac3"/>
+ <path d="m211 187 80-9v20l-80 10z" fill="#799376"/>
+ <path d="m220 190 62-7v4l-62 7z" fill="#e5dac3"/>
+ <g transform="rotate(-6 148 94)"><rect x="135" y="60" width="9" height="66" rx="3" fill="#d3a65f"/><path d="m135 60 4-14 5 14z" fill="#e6dcc7"/><path d="m138 49 1-3 1 4z" fill="#324a3e"/></g>
+ <g transform="rotate(5 166 100)"><rect x="158" y="52" width="9" height="74" rx="3" fill="#314e40"/><rect x="160" y="56" width="2" height="12" rx="1" fill="#b7c7ad"/></g>
+ <path d="m212 116-3-55 46-4 4 54z" fill="#f3eddf" stroke="#d3c8b4" stroke-width="2"/>
+ <path d="m219 72 28-3m-28 13 24-2m-23 12 28-3" stroke="#a4b395" stroke-width="2"/>
+ <path d="m96 217 36 27 179-22" fill="none" stroke="#566f59" stroke-width="3"/>
+</g></svg>

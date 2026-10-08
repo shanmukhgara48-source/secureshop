@@ -68,7 +68,15 @@ def close_db(error=None):
         connection.close()
 
 
+def get_cart_count(user_id):
+    """One owner-filtered quantity calculation for navigation and AJAX feedback."""
+    return (
+        get_db()
+        .execute("SELECT COALESCE(SUM(quantity), 0) FROM cart_items WHERE user_id = ?", (user_id,))
+        .fetchone()[0]
+    )
+
+
 def init_schema(connection):
     # Schema contains trusted SQL only; application input never reaches executescript.
     connection.executescript(SCHEMA)
-

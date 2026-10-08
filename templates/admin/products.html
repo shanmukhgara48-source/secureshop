@@ -1,42 +1,45 @@
 {% extends 'base.html' %}
+{% from '_macros.html' import csrf_field, icon, admin_sidebar %}
 {% block title %}Manage products{% endblock %}
 {% block content %}
-<header class="page-heading">
-  <p class="eyebrow">ADMINISTRATOR / THE COLLECTION</p>
-  <h1>Keep the shop stocked.</h1>
-  <p>Create, edit, and remove local products. Products used in carts or orders are retained.</p>
-</header>
-<div class="section-heading">
-  <h2>{{ products|length }} products</h2>
-  <a class="button" href="{{ url_for('admin.new_product') }}">Add a product <span aria-hidden="true">+</span></a>
-</div>
-{% if error %}<div class="notice notice-error" role="alert">{{ error }}</div>{% endif %}
-{% if products %}
-<div class="table-wrap">
-  <table class="data-table">
-    <thead><tr><th>Product</th><th>Collection</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead>
-    <tbody>
-      {% for product in products %}
-      <tr data-product-id="{{ product['id'] }}">
-        <td><a href="{{ url_for('public.product_detail', product_id=product['id']) }}">{{ product['name'] }}</a><small>#{{ product['id'] }}</small></td>
-        <td>{{ product['category'] }}</td>
-        <td>{{ product['price']|money }}</td>
-        <td>{{ product['stock'] }}</td>
-        <td>
-          <div class="actions">
-            <a class="button button-secondary" href="{{ url_for('admin.edit_product', product_id=product['id']) }}">Edit</a>
-            <form class="inline-form" method="post" action="{{ url_for('admin.delete_product', product_id=product['id']) }}">
-              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-              <button class="button button-danger" type="submit">Delete</button>
-            </form>
-          </div>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-{% else %}
-<section class="empty-state"><h2>The collection is empty.</h2><p>Add a product to get the local shop ready.</p><a class="button" href="{{ url_for('admin.new_product') }}">Add the first product</a></section>
-{% endif %}
+  <div class="admin-layout">
+    {{ admin_sidebar('products') }}
+    <div class="admin-content">
+      <header class="page-heading admin-page-heading">
+        <div><p class="eyebrow">SHOP DESK / PRODUCTS</p><h1>The collection,<br><em>at a glance.</em></h1><p>Keep the everyday edit ready for its next chapter.</p></div>
+        <a class="button" href="{{ url_for('admin.new_product') }}"><span>Add a product</span>{{ icon('plus') }}</a>
+      </header>
+      <div class="admin-stat-grid">
+        <div><span>Products</span><strong>{{ products|length }}</strong>{{ icon('grid') }}</div>
+        <div><span>Items in stock</span><strong>{{ products|sum(attribute='stock') }}</strong>{{ icon('box') }}</div>
+        <div><span>Out of stock</span><strong>{{ products|selectattr('stock', 'equalto', 0)|list|length }}</strong>{{ icon('bag') }}</div>
+      </div>
+      {% if error %}<div class="notice notice-error" role="alert">{{ error }}</div>{% endif %}
+      <div class="list-heading"><h2>Product collection</h2><span>{{ products|length }} products</span></div>
+      {% if products %}
+        <ul class="management-list">
+          {% for product in products %}
+            <li class="management-card" data-product-id="{{ product['id'] }}">
+              <div class="management-product">
+                <a class="item-illustration art-{{ product['category']|lower }}" href="{{ url_for('public.product_detail', product_id=product['id']) }}" aria-label="View {{ product['name'] }}"><img src="{{ url_for('static', filename=product_image(product)) }}" alt="" width="120" height="110" loading="lazy"></a>
+                <div><p class="eyebrow">#{{ product['id'] }} / {{ product['category'] }}</p><h2><a href="{{ url_for('public.product_detail', product_id=product['id']) }}">{{ product['name'] }}</a></h2><p>{{ product['description']|truncate(80) }}</p></div>
+              </div>
+              <div class="management-price"><span>Price</span><strong>{{ product['price']|money }}</strong></div>
+              <div class="management-stock"><span>Stock</span><strong class="{% if not product['stock'] %}stock-empty{% endif %}">{{ product['stock'] }}<small> available</small></strong></div>
+              <div class="management-actions">
+                <a class="button button-secondary" href="{{ url_for('admin.edit_product', product_id=product['id']) }}" aria-label="Edit {{ product['name'] }}">{{ icon('edit') }}<span>Edit</span></a>
+                <form class="inline-form" method="post" action="{{ url_for('admin.delete_product', product_id=product['id']) }}" data-confirm="Delete this product from the local catalogue?">
+                  {{ csrf_field() }}
+                  <button class="button button-danger" type="submit" aria-label="Delete {{ product['name'] }}">{{ icon('trash') }}<span>Delete</span></button>
+                </form>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+        <p class="admin-retention-note">Products in carts or previous orders are retained. Edit them to update the collection.</p>
+      {% else %}
+        <section class="empty-state"><div class="empty-illustration">{{ icon('grid') }}</div><h2>A blank collection.</h2><p>Add the first essential to get the shop ready.</p><a class="button" href="{{ url_for('admin.new_product') }}">Add a product {{ icon('plus') }}</a></section>
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}

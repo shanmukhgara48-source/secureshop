@@ -18,8 +18,13 @@ def smoke(client, emit):
     password = "LocalSmoke!2026"
     emit("Functional test changes local synthetic data. Stop the server and reset before a scan.")
     require(client.get("/"))
-    require(client.form_post("/register", {"username": username, "email": f"{username}@example.invalid",
-                                          "password": password}, "/register"))
+    require(
+        client.form_post(
+            "/register",
+            {"username": username, "email": f"{username}@example.invalid", "password": password},
+            "/register",
+        )
+    )
     client.login(username, password)
     emit("PASS register → login")
     search = require(client.get("/search?q=notebook"))
@@ -53,8 +58,13 @@ def smoke(client, emit):
     emit("PASS checkout → own order → history → profile → logout")
     client.login("admin", "AdminDemo!2026", admin=True)
     before = set(require(client.get("/admin/products")).page().markers.get("data-product-id", []))
-    values = {"name": f"Demo tray {suffix}", "description": "Synthetic admin smoke-test product.",
-              "price": "12.50", "category": "Study", "stock": "5"}
+    values = {
+        "name": f"Demo tray {suffix}",
+        "description": "Synthetic admin smoke-test product.",
+        "price": "12.50",
+        "category": "Study",
+        "stock": "5",
+    }
     created = require(client.form_post("/admin/products/new", values, "/admin/products/new"))
     added = set(created.page().markers.get("data-product-id", [])) - before
     if len(added) != 1:
@@ -66,7 +76,9 @@ def smoke(client, emit):
     edited = require(client.get(edit_path)).body
     if 'value="15.75"' not in edited or values["name"] not in edited:
         raise RuntimeError("The edited product values were not saved.")
-    deleted = require(client.form_post(f"/admin/products/{product_id}/delete", {}, "/admin/products"))
+    deleted = require(
+        client.form_post(f"/admin/products/{product_id}/delete", {}, "/admin/products")
+    )
     if product_id in deleted.page().markers.get("data-product-id", []):
         raise RuntimeError("Admin delete did not remove the new product.")
     users = require(client.get("/admin/users"))

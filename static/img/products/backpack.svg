@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-labelledby="title"><title id="title">Forest green campus backpack</title><defs>
+  <linearGradient id="forest" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#527365"/><stop offset="1" stop-color="#254a3e"/></linearGradient>
+  <linearGradient id="sage" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b7c7ae"/><stop offset="1" stop-color="#879f88"/></linearGradient>
+  <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffdf6"/><stop offset="1" stop-color="#e8ddca"/></linearGradient>
+  <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0e8d7"/><stop offset="1" stop-color="#d3c3a6"/></linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#afb9b2"/><stop offset=".4" stop-color="#e6eae3"/><stop offset="1" stop-color="#929e94"/></linearGradient>
+  <linearGradient id="ochre" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9bf77"/><stop offset="1" stop-color="#c89549"/></linearGradient>
+  <filter id="shadow" x="-50%" y="-100%" width="200%" height="300%"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<ellipse cx="201" cy="272" rx="95" ry="12" fill="#315348" opacity=".16" filter="url(#shadow)"/>
+<path d="M153 95c-24 16-25 95-18 140m114-137c22 13 26 88 19 137" fill="none" stroke="#213e34" stroke-width="19" stroke-linecap="round"/>
+<path d="M184 66V54c0-11 34-11 34 0v12" fill="none" stroke="#d1bd8f" stroke-width="9"/>
+<path d="M123 114c0-36 22-57 75-57s80 24 80 59l-2 126c-1 22-18 30-79 30s-74-8-75-30z" fill="url(#forest)"/>
+<path d="M135 112c0-28 21-43 63-43s64 17 64 44" fill="none" stroke="#9ab096" stroke-width="3" opacity=".8"/>
+<path d="M127 112h143" stroke="#1d3f31" stroke-width="4"/>
+<path d="M133 178c0-9 13-13 64-13s64 4 64 13v66c0 10-13 16-64 16s-64-6-64-16z" fill="#3d6450" stroke="#69896d" stroke-width="2"/>
+<path d="M137 185c35-5 82-5 120 0" stroke="#1d3f31" stroke-width="4"/>
+<path d="M228 180v11" stroke="#ddc58e" stroke-width="4" stroke-linecap="round"/>
+<rect x="176" y="128" width="45" height="22" rx="3" fill="#c6b68e"/><path d="M186 142h25" stroke="#7a785f" stroke-width="2"/>
+<path d="M122 196h-14v45c0 9 7 12 15 12m155-58h12v47c0 8-5 10-13 10" fill="#324e3e"/>
+<path d="M114 203v34m170-34v34" stroke="#769078" stroke-width="2"/>
+<path d="M157 254v12m81-12v12" stroke="#91a187" stroke-width="2"/>
+</svg>

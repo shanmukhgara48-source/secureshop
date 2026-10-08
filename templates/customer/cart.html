@@ -1,11 +1,61 @@
-{% extends "base.html" %}
-{% block title %}Your cart · SecureShop{% endblock %}
+{% extends 'base.html' %}
+{% from '_macros.html' import csrf_field, icon %}
+{% block title %}Your cart{% endblock %}
 {% block content %}
-<div class="page-heading"><p class="eyebrow">NEXT STOP: CHECKOUT</p><h1>Your cart</h1><p>Review your picks. Checkout is a local simulation.</p></div>
-{% if items %}
-<section class="panel"><div class="table-wrap"><table><thead><tr><th>Product</th><th>Price</th><th>Quantity</th><th>Subtotal</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody>
-{% for item in items %}<tr><td><a href="{{ url_for('public.product_detail', product_id=item.product_id) }}">{{ item.name }}</a></td><td>{{ item.price|money }}</td><td>{{ item.quantity }}</td><td>{{ (item.price * item.quantity)|money }}</td><td><form action="{{ url_for('customer.cart_remove') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="item_id" value="{{ item.id }}"><button class="text-button" type="submit">Remove</button></form></td></tr>{% endfor %}
-</tbody></table></div><div class="checkout-summary"><strong>Total: <span data-cart-total="{{ total }}">{{ total|money }}</span></strong><form action="{{ url_for('customer.checkout') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="button" type="submit">Place demo order</button></form></div><p class="muted">No payment, shipping, or external services are involved.</p></section>
-{% else %}<section class="panel empty-state"><h2>A fresh start.</h2><p>Your cart is empty.</p><a class="button" href="{{ url_for('public.products') }}">Explore the catalogue</a></section>{% endif %}
+  <header class="page-heading">
+    <p class="eyebrow">YOUR NEXT EVERYDAY</p>
+    <h1>A few <em>good picks.</em></h1>
+    <p>Review your cart and make the collection yours.</p>
+  </header>
+  {% if items %}
+    <div class="cart-layout">
+      <section class="cart-items" aria-label="Cart items">
+        {% set quantity_count = items|sum(attribute='quantity') %}
+        <div class="list-heading"><h2>Your cart</h2><span>{{ quantity_count }} {{ 'item' if quantity_count == 1 else 'items' }}</span></div>
+        {% for item in items %}
+          <article class="cart-item">
+            <a class="item-illustration art-{{ item.category|lower }}" href="{{ url_for('public.product_detail', product_id=item.product_id) }}" aria-label="View {{ item.name }}">
+              <img src="{{ url_for('static', filename=product_image(item)) }}" alt="" width="160" height="140" loading="lazy">
+            </a>
+            <div class="cart-item-main">
+              <p class="eyebrow">{{ item.category }}</p>
+              <h2><a href="{{ url_for('public.product_detail', product_id=item.product_id) }}">{{ item.name }}</a></h2>
+              <span class="item-unit-price">{{ item.price|money }} each</span>
+              <div class="cart-item-controls">
+                <span class="quantity-pill">Qty <strong>{{ item.quantity }}</strong></span>
+                <form method="post" action="{{ url_for('customer.cart_remove') }}">
+                  {{ csrf_field() }}
+                  <input type="hidden" name="item_id" value="{{ item.id }}">
+                  <button class="text-button remove-button" type="submit">{{ icon('trash') }}<span>Remove</span></button>
+                </form>
+              </div>
+            </div>
+            <div class="cart-item-price"><strong>{{ (item.price * item.quantity)|money }}</strong><span>Subtotal</span></div>
+          </article>
+        {% endfor %}
+        <a class="text-link continue-shopping" href="{{ url_for('public.products') }}">{{ icon('arrow-left') }} Keep exploring</a>
+      </section>
+      <aside class="order-summary summary">
+        <p class="eyebrow">ONE LAST LOOK</p><h2>Your order summary.</h2>
+        <dl class="summary-details">
+          <div><dt>Items</dt><dd>{{ items|sum(attribute='quantity') }}</dd></div>
+          <div><dt>Subtotal</dt><dd>{{ total|money }}</dd></div>
+          <div class="summary-total"><dt>Total</dt><dd><strong data-cart-total="{{ total }}">{{ total|money }}</strong></dd></div>
+        </dl>
+        <form method="post" action="{{ url_for('customer.checkout') }}">
+          {{ csrf_field() }}
+          <button class="button full-width" type="submit"><span>Place demo order</span>{{ icon('arrow-right') }}</button>
+        </form>
+        <p class="summary-note">A simulated order. No payment required.</p>
+        <div class="summary-footnote">{{ icon('box') }}<span>Your order will appear in your account.</span></div>
+      </aside>
+    </div>
+  {% else %}
+    <section class="empty-state empty-cart">
+      <div class="empty-illustration">{{ icon('bag') }}</div>
+      <p class="eyebrow">A LITTLE ROOM FOR SOMETHING GOOD</p><h2>Your cart is a fresh start.</h2>
+      <p>Find a notebook, a carry companion, or your next desk essential.</p>
+      <a class="button" href="{{ url_for('public.products') }}">Explore the collection {{ icon('arrow-right') }}</a>
+    </section>
+  {% endif %}
 {% endblock %}
-

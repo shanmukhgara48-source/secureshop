@@ -1,0 +1,11 @@
+SecureShop replay | http://127.0.0.1:8080 | 2026-10-08T11:55:47+05:30 Asia/Kolkata
+Source commit=d347eb7c2404001fae0a2f43706be6e682afc7d4; working_tree=modified
+A01 /orders/4: HTTP 200; foreign_order_data_returned=true
+A03 normal comparison: HTTP 200; result_count=1
+A03 true comparison: HTTP 200; result_count=12
+A03 false comparison: HTTP 200; result_count=0
+A03 boolean_pair_counts_differ=true
+A05 /: HTTP 200; X-Frame-Options=(absent); Content-Security-Policy=(absent)
+A05 /products: HTTP 200; X-Frame-Options=(absent); Content-Security-Policy=(absent)
+A06 catalogue jQuery reference: /static/vendor/jquery/jquery-3.4.1.min.js
+A06 observation records the loaded library; browser exploitation was not tested or claimed.

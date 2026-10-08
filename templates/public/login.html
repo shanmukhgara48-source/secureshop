@@ -1,34 +1,40 @@
 {% extends 'base.html' %}
+{% from '_macros.html' import csrf_field, icon %}
 {% block title %}Sign in{% endblock %}
 {% block content %}
-<section class="account-layout">
-<div class="account-intro">
-<p class="eyebrow">WELCOME BACK</p>
-<h1>Your next<br>essential awaits.</h1>
-<p>Sign in to manage your cart and see your local order history.</p>
-<div class="account-aside">LOCAL LAB / SYNTHETIC ACCOUNTS</div>
-</div>
-<div class="panel account-panel">
-<h2>Sign in to SecureShop</h2>
-<p class="muted">Use a demo account or one you created here.</p>
-{% if error %}
-<div class="notice notice-error" role="alert">{{ error }}</div>
-{% endif %}
-<form class="stack" method="post" action="{{ url_for('public.login') }}">
-<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-<div class="field">
-<label for="username">Username</label>
-<input id="username" name="username" value="{{ username }}" maxlength="32" autocomplete="username" required>
-</div>
-<div class="field">
-<label for="password">Password</label>
-<input id="password" name="password" type="password" maxlength="128" autocomplete="current-password" required>
-</div>
-<button class="button full-width" type="submit">Sign in <span aria-hidden="true">→</span>
-</button>
-</form>
-<p class="account-switch">New to the shop? <a href="{{ url_for('public.register') }}">Create a local account</a>
-</p>
-</div>
-</section>
+  <section class="auth-layout">
+    <div class="auth-story">
+      <p class="eyebrow">YOUR CAMPUS CORNER</p>
+      <h1>Pick up where<br>you <em>left off.</em></h1>
+      <p>The little things that make a day yours. Your cart, your collection, your next good idea.</p>
+      <div class="auth-story-art">
+        <img src="{{ url_for('static', filename='img/hero-desk.svg') }}" alt="" width="560" height="460">
+        <span class="auth-art-label">EVERYDAY ESSENTIALS / THE CAMPUS EDIT</span>
+      </div>
+    </div>
+    <div class="auth-card panel">
+      <div class="auth-card-icon">{{ icon('user') }}</div>
+      <p class="eyebrow">WELCOME BACK</p>
+      <h2>Sign in.</h2>
+      <p class="muted auth-card-intro">Your everyday essentials are waiting.</p>
+      {% if error %}<div id="login-error" class="notice notice-error" role="alert">{{ error }}</div>{% endif %}
+      <form class="stack" method="post" action="{{ url_for('public.login') }}" {% if error %}aria-describedby="login-error"{% endif %}>
+        {{ csrf_field() }}
+        <div class="field">
+          <label for="login-username">Username</label>
+          <input id="login-username" name="username" value="{{ username }}" maxlength="{{ form_limits.username_max }}" autocomplete="username" spellcheck="false" autocapitalize="none" placeholder="Your username" required>
+        </div>
+        <div class="field">
+          <label for="login-password">Password</label>
+          <div class="password-field">
+            <input id="login-password" name="password" type="password" maxlength="{{ form_limits.password_max }}" autocomplete="current-password" placeholder="Your password" required>
+            <button class="password-toggle" type="button" data-password-target="login-password" aria-label="Show password">{{ icon('eye') }}</button>
+          </div>
+        </div>
+        <button class="button full-width" type="submit"><span>Sign in to your account</span>{{ icon('arrow-right') }}</button>
+      </form>
+      <p class="account-switch">New to the shop? <a href="{{ url_for('public.register') }}">Create an account {{ icon('arrow-up-right') }}</a></p>
+      <p class="auth-demo-note">Local demo accounts only.</p>
+    </div>
+  </section>
 {% endblock %}

@@ -1,10 +1,36 @@
-{% extends "base.html" %}
-{% block title %}Order #{{ order.id }} · SecureShop{% endblock %}
+{% extends 'base.html' %}
+{% from '_macros.html' import icon, status_badge %}
+{% block title %}Order #{{ order.id }}{% endblock %}
 {% block content %}
-<div class="page-heading"><p class="eyebrow">ORDER DETAILS</p><h1>Order #{{ order.id }}</h1><p>{{ order.created_at }} · {{ order.status }}</p></div>
-<section class="panel" data-order-id="{{ order.id }}" data-order-owner="{{ owner.username }}" data-order-total="{{ order.total }}">
-<p><strong>Account:</strong> <span id="order-owner">{{ owner.username }}</span></p>
-<div class="table-wrap"><table><thead><tr><th>Product</th><th>Quantity</th><th>Price at checkout</th><th>Subtotal</th></tr></thead><tbody>{% for item in items %}<tr><td>{{ item.name }}</td><td>{{ item.quantity }}</td><td>{{ item.unit_price|money }}</td><td>{{ (item.quantity * item.unit_price)|money }}</td></tr>{% endfor %}</tbody></table></div>
-<div class="checkout-summary"><strong>Total: {{ order.total|money }}</strong><a class="button secondary" href="{{ url_for('customer.orders') }}">Back to your orders</a></div><p class="muted">Synthetic order for the faculty lab. No payment was taken.</p>
-</section>
+  <a class="text-link back-link" href="{{ url_for('customer.orders') }}">{{ icon('arrow-left') }} Back to your orders</a>
+  <header class="page-heading order-heading">
+    <div><p class="eyebrow">YOUR ACCOUNT / ORDER DETAILS</p><h1>Order <em>#{{ order.id }}.</em></h1><p>Placed {{ order.created_at|shop_date }}</p></div>
+    {{ status_badge(order.status) }}
+  </header>
+  <section class="order-detail-layout" data-order-id="{{ order.id }}" data-order-owner="{{ owner.username }}" data-order-total="{{ order.total }}">
+    <div class="order-items panel">
+      {% set quantity_count = items|sum(attribute='quantity') %}
+      <div class="list-heading"><h2>The essentials you picked.</h2><span>{{ quantity_count }} {{ 'item' if quantity_count == 1 else 'items' }}</span></div>
+      {% for item in items %}
+        <article class="order-item">
+          <a class="item-illustration art-{{ item.category|lower }}" href="{{ url_for('public.product_detail', product_id=item.product_id) }}" aria-label="View {{ item.name }}"><img src="{{ url_for('static', filename=product_image(item)) }}" alt="" width="160" height="140" loading="lazy"></a>
+          <div class="order-item-main"><p class="eyebrow">{{ item.category }}</p><h2>{{ item.name }}</h2><span>Qty {{ item.quantity }} · {{ item.unit_price|money }} each</span></div>
+          <strong class="order-item-total">{{ (item.quantity * item.unit_price)|money }}</strong>
+        </article>
+      {% endfor %}
+      <p class="order-price-note">Prices shown are the prices recorded when this order was placed.</p>
+    </div>
+    <aside class="order-summary summary">
+      <p class="eyebrow">THE DETAILS</p><h2>Order summary.</h2>
+      <dl class="summary-details order-meta">
+        <div><dt>Order</dt><dd>#{{ order.id }}</dd></div>
+        <div><dt>Account</dt><dd id="order-owner">{{ owner.username }}</dd></div>
+        <div><dt>Placed</dt><dd>{{ order.created_at|shop_date }}</dd></div>
+        <div><dt>Status</dt><dd>{{ order.status }}</dd></div>
+        <div class="summary-total"><dt>Total</dt><dd><strong>{{ order.total|money }}</strong></dd></div>
+      </dl>
+      <p class="summary-note">A local demo order. No payment was taken.</p>
+      <a class="button button-secondary full-width" href="{{ url_for('public.products') }}"><span>Explore the collection</span>{{ icon('arrow-right') }}</a>
+    </aside>
+  </section>
 {% endblock %}

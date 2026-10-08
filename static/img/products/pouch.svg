@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-labelledby="title"><title id="title">Ochre zipped travel pouch</title><defs>
+  <linearGradient id="forest" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#527365"/><stop offset="1" stop-color="#254a3e"/></linearGradient>
+  <linearGradient id="sage" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b7c7ae"/><stop offset="1" stop-color="#879f88"/></linearGradient>
+  <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffdf6"/><stop offset="1" stop-color="#e8ddca"/></linearGradient>
+  <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0e8d7"/><stop offset="1" stop-color="#d3c3a6"/></linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#afb9b2"/><stop offset=".4" stop-color="#e6eae3"/><stop offset="1" stop-color="#929e94"/></linearGradient>
+  <linearGradient id="ochre" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9bf77"/><stop offset="1" stop-color="#c89549"/></linearGradient>
+  <filter id="shadow" x="-50%" y="-100%" width="200%" height="300%"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<ellipse cx="201" cy="252" rx="123" ry="15" fill="#315348" opacity=".15" filter="url(#shadow)"/>
+<path d="M83 129c2-18 19-26 115-26s113 8 119 27l-11 110c-2 13-15 16-108 16s-109-4-111-16z" fill="url(#ochre)"/>
+<path d="m83 131 25-10-1 115-20 4z" fill="#bf894b"/>
+<path d="M87 128c64-10 160-12 226-1" stroke="#4b513e" stroke-width="6" fill="none"/>
+<path d="M89 127c64-8 157-10 220-1" stroke="#e4d7b1" stroke-width="2" stroke-dasharray="2 4" fill="none"/>
+<path d="M287 129v21" stroke="#5a5944" stroke-width="4" stroke-linecap="round"/>
+<path d="M285 149c-13 3-15 20-7 20 9 0 20-24 11-23" fill="none" stroke="#3e5846" stroke-width="6"/>
+<path d="M110 150v78c0 5 9 9 24 10m162-88-8 80c-1 5-9 8-23 9" fill="none" stroke="#f6d18e" stroke-width="2" opacity=".6"/>
+<rect x="174" y="171" width="58" height="32" rx="5" fill="#f3e7c8"/>
+<path d="M188 194v-14l13 14 13-14v14" fill="none" stroke="#6c775b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M83 137c-20-5-35 12-27 33 7 17 19 19 31 16" stroke="#9b763e" stroke-width="8" fill="none"/>
+</svg>
