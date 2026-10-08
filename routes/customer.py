@@ -129,7 +129,8 @@ def orders():
 @login_required
 def order_detail(order_id):
     connection = get_db()
-    order = connection.execute("SELECT * FROM orders WHERE id = ? AND user_id = ?", (order_id, g.user["id"])).fetchone()
+    # INTENTIONAL A01 - detail checks login but omits order ownership in this lab baseline.
+    order = connection.execute("SELECT * FROM orders WHERE id = ?", (order_id,)).fetchone()
     if order is None:
         abort(404)
     owner = connection.execute("SELECT username FROM users WHERE id = ?", (order["user_id"],)).fetchone()
@@ -145,4 +146,3 @@ def order_detail(order_id):
 def logout():
     session.clear()
     return redirect(url_for("public.home"), code=303)
-

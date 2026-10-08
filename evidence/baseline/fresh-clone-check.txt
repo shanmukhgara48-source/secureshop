@@ -1,0 +1,32 @@
+Fresh-clone verification | 2026-10-08T05:46:05+00:00
+Tested source commit=c630bddd96f440b22a322dd223bdc81cf71814fb
+Initial tracked/untracked status=clean
+Helper logs later report modified status because this temporary clone contains its untracked server log and newly written evidence; application source was unchanged.
+Runtime: Python 3.14.3; SQLite 3.51.3
+PASS new virtualenv and pinned requirements installation
+No broken requirements found.
+Reset shop.db: 2 customers, 1 admin, 12 products, 6 orders. Demo credentials are in README.md.
+PASS python app.py: HTTP 200, listener 127.0.0.1:8080 only
+SecureShop replay | http://127.0.0.1:8080 | 2026-10-08T11:16:10+05:30 Asia/Kolkata
+Source commit=c630bddd96f440b22a322dd223bdc81cf71814fb; working_tree=modified
+A01 /orders/4: HTTP 200; foreign_order_data_returned=true
+A03 normal comparison: HTTP 200; result_count=1
+A03 true comparison: HTTP 200; result_count=12
+A03 false comparison: HTTP 200; result_count=0
+A03 boolean_pair_counts_differ=true
+A05 /: HTTP 200; X-Frame-Options=(absent); Content-Security-Policy=(absent)
+A05 /products: HTTP 200; X-Frame-Options=(absent); Content-Security-Policy=(absent)
+A06 catalogue jQuery reference: /static/vendor/jquery/jquery-3.4.1.min.js
+A06 observation records the loaded library; browser exploitation was not tested or claimed.
+Saved evidence/baseline/replay-20261008T054610711129Z.txt
+SecureShop smoke | http://127.0.0.1:8080 | 2026-10-08T11:16:10+05:30 Asia/Kolkata
+Source commit=c630bddd96f440b22a322dd223bdc81cf71814fb; working_tree=modified
+Functional test changes local synthetic data. Stop the server and reset before a scan.
+PASS register → login
+PASS search → product → add → cart → remove → add
+PASS checkout → own order → history → profile → logout
+PASS admin login → create → edit → delete → user list → logout
+PASS complete normal demo journey; reset restores the original synthetic seed state.
+Saved evidence/baseline/smoke-20261008T054611011573Z.txt
+PASS debug mode off; fresh-clone test server stopped
+This verification made no source changes. The final Stage 4 amendment adds only this evidence file.

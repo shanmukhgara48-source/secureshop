@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecureShop local framing check</title>
+  <style>
+    body { margin: 0; padding: 24px; color: #20332c; background: #f5f3ed; font: 16px/1.5 system-ui, sans-serif; }
+    main { max-width: 1200px; margin: auto; }
+    h1 { margin: 0 0 12px; font-size: 28px; }
+    p { max-width: 850px; }
+    iframe { display: block; width: 100%; height: 720px; border: 2px solid #89978e; background: white; }
+    code { font-size: .95em; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>SecureShop local framing check</h1>
+    <p>This synthetic university lab fixture embeds the catalogue from
+      <code>http://127.0.0.1:8080/products</code>. Serve this page only on
+      <code>127.0.0.1:9000</code>, a different origin from the shop.</p>
+    <p>At the vulnerable baseline the catalogue can appear below. A later
+      anti-framing fix should block it. This shows embedding behavior and does
+      not demonstrate a completed clickjacking attack.</p>
+    <iframe src="http://127.0.0.1:8080/products" title="SecureShop synthetic catalogue on loopback port 8080"></iframe>
+  </main>
+</body>
+</html>

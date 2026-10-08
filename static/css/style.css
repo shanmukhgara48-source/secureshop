@@ -1490,4 +1490,7 @@ nav .nav-register {
   white-space:nowrap;
   border:0;
 }
-
+/* Keep the catalogue feedback area invisible until it contains a message. */
+.catalogue-status:empty {
+  display: none;
+}

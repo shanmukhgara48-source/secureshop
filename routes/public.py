@@ -80,11 +80,9 @@ def search():
     if len(query) > 120:
         abort(400)
     try:
-        # Stage 2 baseline: parameterized; the controlled A03 query arrives in Stage 4.
-        items = get_db().execute(
-            "SELECT * FROM products WHERE name LIKE ? OR description LIKE ? ORDER BY id",
-            (f"%{query}%", f"%{query}%"),
-        ).fetchall()
+        statement = f"SELECT * FROM products WHERE name LIKE '%{query}%' OR description LIKE '%{query}%' ORDER BY id"  # INTENTIONAL A03 - fix in remediation phase.
+        # Normal execute accepts one statement; this lab endpoint only constructs a SELECT.
+        items = get_db().execute(statement).fetchall()
     except sqlite3.Error:
         flash("That search could not be completed. Please try another search.", "error")
         items = []

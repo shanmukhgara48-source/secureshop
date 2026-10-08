@@ -56,6 +56,7 @@ def create_app(test_config=None):
 
     @app.after_request
     def finish_response(response):
+        # INTENTIONAL A05 - omit CSP framing protection, X-Frame-Options, and other security headers.
         # Prevent browser reuse of private pages after logout; this is a cache directive.
         if g.get("user") is not None or request.path in ("/login", "/register", "/admin/login"):
             response.headers["Cache-Control"] = "no-store"

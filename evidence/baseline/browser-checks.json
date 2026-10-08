@@ -1,0 +1,18 @@
+{
+  "testedAt": "2026-10-08T05:42:07.636Z",
+  "sourceState": "Stage 4 working tree before vulnerable tag",
+  "seedState": "Reset immediately before browser run; AJAX added one notebook to customer_a cart",
+  "jqueryVersion": "3.4.1",
+  "categoryFilteredCards": 3,
+  "ajaxCartCount": "1",
+  "ajaxStayedOnCatalogue": true,
+  "viewportOverflow": {
+    "320": false,
+    "375": false,
+    "1440": false
+  },
+  "iframeCatalogueVisible": true,
+  "embeddedHeading": "The collection.",
+  "consoleOrPageErrors": [],
+  "externalRequests": []
+}
